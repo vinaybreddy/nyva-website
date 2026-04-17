@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyva Product Guide</title>
+    <meta name="description" content="Your complete guide to running your home services business with Nyva.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <style>
+        :root{--white:#fff;--off-white:#FAFBFC;--g50:#F5F7FA;--g100:#E8ECF1;--g200:#D1D8E0;--g400:#9BA5B3;--g600:#5A6577;--g700:#3d4654;--g800:#2D3442;--g900:#1A1F2B;--b50:#EEF4FF;--b100:#D9E6FF;--b400:#6FA0F8;--b600:#2563EB;--b700:#1D4FBF;--p50:#F3EEFF;--p100:#E2D5FF;--p500:#8B5CF6;--p600:#7C3AED;--gn50:#ECFDF5;--gn500:#10B981;--gn600:#059669;--am50:#FFFBEB;--am500:#F59E0B;--r50:#FEF2F2;--r500:#EF4444}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g900);background:var(--white);line-height:1.7;overflow-x:hidden}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);transition:box-shadow .3s}
+        nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.06)}
+        .nav-title{font-size:1.1rem;font-weight:700;letter-spacing:-.03em;color:var(--g900)}
+        .nav-cta{padding:.5rem 1.2rem;background:var(--g900);color:var(--white);border-radius:8px;font-weight:600;font-size:.82rem;text-decoration:none;transition:all .2s}
+        .nav-cta:hover{background:var(--g800);transform:translateY(-1px)}
+        .progress-bar{position:fixed;top:56px;left:0;right:0;height:3px;background:var(--g100);z-index:99}
+        .progress-fill{height:100%;width:0%;background:var(--b600);transition:width .15s}
+        .page-layout{display:flex;max-width:1200px;margin:0 auto;padding-top:60px}
+        .toc-sidebar{width:220px;flex-shrink:0;padding:2.5rem 1.5rem 2rem 2rem;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;border-right:1px solid var(--g100)}
+        .toc-sidebar::-webkit-scrollbar{width:3px}
+        .toc-sidebar::-webkit-scrollbar-thumb{background:var(--g200);border-radius:10px}
+        .toc-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--g400);margin-bottom:.6rem;margin-top:1.25rem}
+        .toc-label:first-child{margin-top:0}
+        .toc-list{list-style:none}
+        .toc-list li{margin-bottom:.1rem}
+        .toc-list a{display:block;padding:.3rem .65rem;border-radius:6px;font-size:.78rem;font-weight:500;color:var(--g600);text-decoration:none;transition:all .15s;border-left:2px solid transparent}
+        .toc-list a:hover{color:var(--g900);background:var(--g50)}
+        .toc-list a.active{color:var(--b600);background:var(--b50);border-left-color:var(--b600);font-weight:600}
+        .guide-content{flex:1;min-width:0;max-width:720px;padding:3rem 3rem 6rem}
+        .guide-hero{margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--g100)}
+        .guide-hero h1{font-family:'Newsreader',Georgia,serif;font-size:2.4rem;font-weight:400;line-height:1.2;letter-spacing:-.03em;margin-bottom:.6rem}
+        .guide-hero h1 em{font-style:italic;color:var(--p600)}
+        .guide-hero .subtitle{font-size:1.1rem;color:var(--g600);line-height:1.65;margin-bottom:1rem}
+        .guide-meta{display:flex;gap:1.5rem;font-size:.82rem;color:var(--g400);font-weight:500}
+        .guide-meta span{display:flex;align-items:center;gap:.35rem}
+        .guide-meta svg{width:14px;height:14px}
+        .part-header{background:var(--g900);color:var(--white);margin:3rem -3rem 2rem;padding:2rem 3rem;border-radius:0}
+        .part-header h2{font-family:'Newsreader',Georgia,serif;font-size:1.6rem;font-weight:400;color:var(--white);margin:0}
+        .part-header p{font-size:.88rem;color:var(--g400);margin-top:.35rem}
+        .guide-section{margin-bottom:3rem;scroll-margin-top:80px}
+        .guide-section h2{font-family:'Newsreader',Georgia,serif;font-size:1.7rem;font-weight:400;letter-spacing:-.02em;margin-bottom:.5rem;padding-top:.5rem}
+        .guide-section h3{font-size:1.05rem;font-weight:700;margin-top:1.75rem;margin-bottom:.5rem;color:var(--g900)}
+        .guide-section p{font-size:.92rem;color:var(--g700);margin-bottom:.85rem;line-height:1.75}
+        .sc{max-width:320px;margin:1.25rem auto;border-radius:14px;overflow:hidden;border:1px solid var(--g100);box-shadow:0 4px 16px rgba(0,0,0,.05);background:var(--white)}
+        .sc img{width:100%;height:auto;display:block}
+        .sc-cap{text-align:center;font-size:.76rem;color:var(--g400);font-weight:500;margin-top:.6rem;margin-bottom:1rem}
+        .sc-sm{max-width:260px}
+        .sc-pair{display:flex;gap:1.25rem;justify-content:center;align-items:flex-start;margin:1.25rem 0;flex-wrap:wrap}
+        .sc-pair .sc{max-width:260px;margin:0}
+        .co{padding:1.15rem 1.35rem;border-radius:10px;margin:1.25rem 0;font-size:.88rem;line-height:1.65}
+        .co strong{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+        .co-green{background:var(--gn50);border-left:3px solid var(--gn500)}.co-green strong{color:var(--gn600)}
+        .co-blue{background:var(--b50);border-left:3px solid var(--b600)}.co-blue strong{color:var(--b600)}
+        .co-amber{background:var(--am50);border-left:3px solid var(--am500)}.co-amber strong{color:var(--am500)}
+        .co-purple{background:var(--p50);border-left:3px solid var(--p600)}.co-purple strong{color:var(--p600)}
+        .sl{counter-reset:s;list-style:none;margin:1.15rem 0}
+        .sl li{counter-increment:s;position:relative;padding-left:2.5rem;margin-bottom:.85rem;font-size:.9rem;color:var(--g700);line-height:1.65}
+        .sl li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:7px;background:var(--b50);color:var(--b600);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+        .sl li strong{color:var(--g900)}
+        .fl{list-style:none;margin:.85rem 0}
+        .fl li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.9rem;color:var(--g700);line-height:1.6}
+        .fl li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--b600)}
+        .fl li strong{color:var(--g900)}
+        .ft{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.82rem}
+        .ft th{text-align:left;padding:.65rem .85rem;background:var(--g50);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--g600);border-bottom:2px solid var(--g100)}
+        .ft td{padding:.65rem .85rem;border-bottom:1px solid var(--g100);color:var(--g700);line-height:1.5}
+        .ft td:first-child{font-weight:600;color:var(--g900);white-space:nowrap}
+        .ft tr:last-child td{border-bottom:none}
+        .bq{margin:1rem 0;padding:.85rem 1.25rem;background:var(--g50);border-left:3px solid var(--g200);border-radius:0 8px 8px 0;font-size:.88rem;color:var(--g700);font-style:italic;line-height:1.6}
+        .feedback{background:var(--g900);color:var(--white);border-radius:18px;padding:2.25rem;margin-top:2rem}
+        .feedback h3{color:var(--white);font-size:1.1rem;margin-bottom:.6rem}
+        .feedback p{color:var(--g400);font-size:.88rem}
+        .feedback a{color:var(--b400)}
+        .section-divider{border:none;border-top:1px solid var(--g100);margin:2.25rem 0}
+        /* Flow steps — horizontal screenshot sequence */
+        .flow{display:flex;gap:1rem;overflow-x:auto;padding:1rem 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+        .flow .step{flex:0 0 220px;scroll-snap-align:start}
+        .flow .step img{width:100%;border-radius:12px;border:1px solid var(--g100);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+        .flow .step-label{font-size:.72rem;font-weight:700;color:var(--b600);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+        .flow .step-cap{font-size:.75rem;color:var(--g600);margin-top:.35rem;line-height:1.4}
+        .toc-toggle{display:none;background:none;border:0;padding:.4rem;margin-right:.25rem;cursor:pointer;color:var(--g900)}
+        .toc-toggle svg{width:24px;height:24px;display:block}
+        .toc-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99;opacity:0;transition:opacity .25s}
+        body.toc-open{overflow:hidden}
+        body.toc-open .toc-backdrop{display:block;opacity:1}
+        @media(max-width:900px){
+            .toc-toggle{display:inline-flex;align-items:center}
+            nav{padding:1rem 1.25rem}
+            .toc-sidebar{position:fixed;top:0;left:0;width:280px;max-width:82vw;height:100vh;background:var(--white);border-right:1px solid var(--g100);padding:4.5rem 1.25rem 2rem;transform:translateX(-100%);transition:transform .28s ease;z-index:100;box-shadow:2px 0 24px rgba(0,0,0,.08);display:block;will-change:transform;-webkit-overflow-scrolling:touch;overflow-y:auto;overscroll-behavior:contain}
+            body.toc-open .toc-sidebar{transform:translateX(0)}
+            .toc-list a{font-size:.88rem;padding:.55rem .7rem}
+            .guide-content{padding:2rem 1.5rem 4rem;max-width:100%}
+            .guide-hero h1{font-size:1.9rem}
+            .part-header{margin:2rem -1.5rem 1.5rem;padding:1.5rem}
+            .sc{max-width:280px}
+            .sc-pair .sc{max-width:220px}
+            .ft{font-size:.75rem;table-layout:auto;width:100%}
+            .ft td,.ft th{padding:.55rem .5rem;vertical-align:top}
+            .ft td:first-child{white-space:normal}
+            .ft td,.ft th{word-break:normal;overflow-wrap:break-word}
+            .flow .step{flex:0 0 180px}
+        }
+    </style>
+</head>
+<body>
+
+<nav id="navbar">
+    <span style="display:flex;align-items:center;gap:.25rem">
+        <button class="toc-toggle" id="tocToggle" aria-label="Toggle table of contents" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="nav-title"><a href="/" style="color:var(--g400);text-decoration:none;font-weight:500;font-size:.85rem">Nyva</a> <span style="color:var(--g200);margin:0 .5rem">/</span> Product Guide</span>
+    </span>
+    <a href="https://apps.apple.com/us/app/nyva-for-small-business/id6761277841" target="_blank" class="nav-cta">Download App</a>
+</nav>
+<div class="toc-backdrop" id="tocBackdrop"></div>
+<div class="progress-bar"><div class="progress-fill" id="pf"></div></div>
+
+<div class="page-layout">
+<aside class="toc-sidebar">
+    <div class="toc-label">Getting Started</div>
+    <ul class="toc-list">
+        <li><a href="#login">Sign In</a></li>
+        <li><a href="#settings-overview">Set Up Your Business</a></li>
+    </ul>
+    <div class="toc-label">Your Daily Routine</div>
+    <ul class="toc-list">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#sam">Sam AI Advisor</a></li>
+        <li><a href="#schedule">Schedule & Dispatch</a></li>
+        <li><a href="#plan-day">Plan My Day</a></li>
+        <li><a href="#phone-agent">AI Phone Agent</a></li>
+    </ul>
+    <div class="toc-label">Managing Work</div>
+    <ul class="toc-list">
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#new-job">Create a Job</a></li>
+        <li><a href="#complete-job">Complete a Job</a></li>
+        <li><a href="#customers">Customers</a></li>
+        <li><a href="#invoicing">Invoicing & Payment</a></li>
+    </ul>
+    <div class="toc-label">Your Business</div>
+    <ul class="toc-list">
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#automations">Automations</a></li>
+        <li><a href="#push-notifications">Push Notifications</a></li>
+        <li><a href="#settings">Settings</a></li>
+    </ul>
+    <div class="toc-label">Reference</div>
+    <ul class="toc-list">
+        <li><a href="#ref-dashboard">Dashboard Metrics</a></li>
+        <li><a href="#ref-jobs">Job Fields & Status</a></li>
+        <li><a href="#ref-customers">Customer Fields</a></li>
+        <li><a href="#ref-invoice">Invoice & Payments</a></li>
+        <li><a href="#ref-team">Team & Roles</a></li>
+        <li><a href="#ref-sam">Sam AI</a></li>
+        <li><a href="#ref-notifications">Notifications</a></li>
+        <li><a href="#ref-settings">Settings Index</a></li>
+        <li><a href="#ref-glossary">Glossary</a></li>
+    </ul>
+</aside>
+
+<main class="guide-content">
+
+<div class="guide-hero">
+    <h1>Your Business, <em>One Screen Away</em></h1>
+    <p class="subtitle">See how Nyva works, screen by screen. Workflows for your daily routine, plus a full reference for every metric, field, and setting in the app.</p>
+    <div class="guide-meta">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 min read</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>10 min setup</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Updated Apr 10, 2026</span>
+    </div>
+</div>
+
+<!-- ═══════ WHAT'S INSIDE ═══════ -->
+<section class="guide-section" id="features" style="padding-bottom: 0;">
+    <h2 style="text-align:center; margin-bottom: 0.5rem;">Everything You Need to Run Your Business</h2>
+    <p style="text-align:center; color: var(--g400); margin-bottom: 2rem;">One app. No spreadsheets. No paper.</p>
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 600px; margin: 0 auto;">
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f527;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Jobs & Dispatch</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Create, assign, and track every job. AI suggests the best tech.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f4b0;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Invoicing & Payments</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Auto-invoices on job completion. Collect payment on-site or online.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f4c5;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Calendar & Scheduling</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Drag-and-drop dispatch board. Week and month views.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f4f1;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Tech Mobile Portal</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Techs see their jobs, clock in/out, take photos, and collect payment.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f916;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Sam AI Advisor</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Weekly briefings, route optimization, and a business advisor you can ask anything.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f514;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Notifications & Alerts</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Push notifications, SMS, and email. Emergency alerts arrive instantly.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1f4ca;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">Reports & Reviews</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Revenue, job volume, team performance, and customer reviews at a glance.</p>
+        </div>
+        <div style="background: var(--g50); border-radius: 12px; padding: 1.25rem; text-align:center;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x260e;&#xfe0f;</div>
+            <p style="font-weight: 600; font-size: 0.95rem; color: var(--g800); margin: 0 0 0.25rem;">AI Phone Agent</p>
+            <p style="font-size: 0.78rem; color: var(--g400); margin: 0;">Answers calls, books jobs, and texts customers — without you picking up.</p>
+        </div>
+    </div>
+</section>
+<hr class="section-divider">
+
+<!-- ═══════ GETTING STARTED ═══════ -->
+<div class="part-header"><h2>Getting Started</h2><p>From download to your first job in 10 minutes</p></div>
+
+<section class="guide-section" id="login">
+    <h2>Sign In</h2>
+    <p>No password needed. Enter your email, get a code, you're in.</p>
+    <div class="flow">
+        <div class="step">
+            <div class="step-label">Step 1</div>
+            <img src="screenshots/login-screen.png?v=2" alt="Open Nyva" loading="lazy">
+            <div class="step-cap">Open the app and tap Sign In</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Step 2</div>
+            <img src="screenshots/login-email.png?v=2" alt="Enter email" loading="lazy">
+            <div class="step-cap">Enter your email address</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Step 3</div>
+            <img src="screenshots/login-otp.png?v=2" alt="Enter code" loading="lazy">
+            <div class="step-cap">Enter the 6-digit code from your email</div>
+        </div>
+    </div>
+    <div class="co co-blue">
+        <strong>Install on your phone</strong>
+        Download Nyva from the App Store. Sign in once and you stay logged in.
+    </div>
+
+    <div class="co co-blue">
+        <strong>Technician Phone Login</strong>
+        Techs can sign in with their phone number instead of email. Tap <strong>Phone</strong> on the sign-in screen, enter your number, and get a code by text message. Same 8-digit code, just delivered by SMS.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="settings-overview">
+    <h2>Set Up Your Business</h2>
+    <p>Three things to configure right away. Everything else can wait.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/settings-business.png" alt="Business info" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/settings-billing.png" alt="Billing settings" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Your business profile and billing settings</p>
+
+    <ol class="sl">
+        <li><strong>Hourly Rate</strong> — your labor rate (e.g., $125/hr). Invoices calculate from this automatically.</li>
+        <li><strong>Discount Limit</strong> — max discount a tech can give without calling you.</li>
+        <li><strong>Dispatch Instructions</strong> — tell the AI how you run things, in plain English.</li>
+    </ol>
+
+    <div class="sc"><img src="screenshots/settings-dispatch.png" alt="Dispatch instructions" loading="lazy"></div>
+    <p class="sc-cap">Write your rules once. The AI follows them every time.</p>
+
+    <div class="bq">"Maria handles all gas line jobs. Don't send anyone to the east side before 10am, traffic is horrible."</div>
+</section>
+
+<!-- ═══════ YOUR DAILY ROUTINE ═══════ -->
+<div class="part-header"><h2>Your Daily Routine</h2><p>Open the app. Know your business. 2 minutes.</p></div>
+
+<section class="guide-section" id="dashboard">
+    <h2>Dashboard</h2>
+    <p>Everything you need to know, the moment you open the app.</p>
+
+    <div class="sc"><img src="screenshots/dash-full.png" alt="Dashboard" loading="lazy"></div>
+    <p class="sc-cap">Revenue, jobs, ratings, and alerts at a glance</p>
+
+    <p>Four numbers tell you how your business is doing right now. If something needs attention, an alert shows up. No clicking around.</p>
+
+    <h3>The Four Main Numbers</h3>
+    <table class="ft">
+        <thead><tr><th>Number</th><th>What It Means</th></tr></thead>
+        <tbody>
+            <tr><td>Revenue (YTD)</td><td>Money collected since January 1. Only counts invoices customers actually paid. Not sent, not overdue. The small number below compares to this day last year.</td></tr>
+            <tr><td>Outstanding</td><td>Money owed to you right now. Every unpaid invoice from every completed job, added up. Turns red if it crosses $500 or anything is overdue.</td></tr>
+            <tr><td>Jobs Today</td><td>How many jobs are on the schedule for today, not counting cancelled ones. If any are unassigned, the card flags it.</td></tr>
+            <tr><td>Rating</td><td>Your average star rating from your last 200 reviews. The little arrow shows if you're trending up or down (compares last 10 reviews to the 10 before that).</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Alert Cards That Show Up When Needed</h3>
+    <p>These only appear when there's something to look at. A clean dashboard means a clean business.</p>
+    <table class="ft">
+        <thead><tr><th>Alert</th><th>When It Shows</th></tr></thead>
+        <tbody>
+            <tr><td>Overdue</td><td>When unpaid invoices are more than 30 days old. Always red. Tap to see who owes you and how long they've been late.</td></tr>
+            <tr><td>Awaiting Payment</td><td>Completed jobs with invoices the customer hasn't paid yet. Shows the customer name, amount, and days outstanding.</td></tr>
+            <tr><td>Pending Estimates</td><td>Quotes you've sent but haven't heard back on. Shows draft count, sent count, and total pipeline value.</td></tr>
+            <tr><td>Uninvoiced Completed Jobs</td><td>Jobs finished today where nobody created an invoice. These cost you money until you fix them.</td></tr>
+            <tr><td>Expiring Warranties</td><td>Jobs where the warranty runs out in the next 30 days. A chance to proactively offer maintenance.</td></tr>
+            <tr><td>Upcoming Recurring Jobs</td><td>Jobs from a recurring service plan coming up in the next 7 days.</td></tr>
+        </tbody>
+    </table>
+
+    <div class="sc"><img src="screenshots/dash-tomorrow.png" alt="Tomorrow's schedule" loading="lazy"></div>
+    <p class="sc-cap">Tomorrow's jobs and Job Mix trends below</p>
+
+    <h3>Today's Jobs &amp; Tomorrow's Jobs</h3>
+    <p>Scroll below the main numbers to see every job on today's and tomorrow's schedule. Each job card shows:</p>
+    <ul class="fl">
+        <li><strong>Time</strong>: when the job is scheduled (e.g., 2:30 PM).</li>
+        <li><strong>Job type</strong>: "Water Heater Install", "AC Repair", etc.</li>
+        <li><strong>Customer &amp; address</strong>: who and where.</li>
+        <li><strong>Status pill</strong>: Scheduled (blue), In Progress (amber), Completed (green), or Overdue (red if past start time and not started).</li>
+        <li><strong>Assigned tech</strong>: the tech's name, or a red "Unassigned" badge if nobody's on it.</li>
+        <li><strong>AI Booked badge</strong>: purple badge if the AI phone agent created this job.</li>
+        <li><strong>Estimated price</strong>: if you set one when creating the job.</li>
+    </ul>
+
+    <h3>Yesterday's Summary &amp; This Week</h3>
+    <p>Collapsible cards at the bottom recap how you closed out yesterday and how the week is shaping up.</p>
+    <table class="ft">
+        <thead><tr><th>Card</th><th>Shows</th></tr></thead>
+        <tbody>
+            <tr><td>Yesterday's Summary</td><td>Jobs completed, revenue collected, new reviews, and average rating. All for yesterday only.</td></tr>
+            <tr><td>This Week</td><td>Total jobs scheduled this week (Sun&ndash;Sat), jobs completed so far, and revenue collected this week.</td></tr>
+        </tbody>
+    </table>
+
+    <div class="co co-blue">
+        <strong>Need more detail?</strong>
+        The <a href="#ref-dashboard" style="color:var(--b600);font-weight:600">Dashboard Metrics Reference</a> at the bottom of this guide explains exactly how each number is calculated. Useful when you're reconciling with your accountant.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="sam">
+    <h2>Sam, Your AI Business Advisor</h2>
+    <p>Sam reads your data every week and tells you what matters.</p>
+
+    <h3>Weekly Briefing</h3>
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/briefing-expanded.png" alt="Sam's Briefing" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/briefing-money.png" alt="Money section" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Five business areas, each with status and one-tap actions</p>
+    <p>Money, Operations, Customers, Reputation, Team. Each section says "needs attention" or "all good." When Sam recommends something, tap Approve and it's done.</p>
+
+    <h3>Ask Sam Anything</h3>
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/ask-sam-answer.png" alt="Ask Sam" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/ask-sam-history.png" alt="Past conversations" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Ask any question in plain English. Sam pulls your real numbers.</p>
+
+    <ul class="fl">
+        <li><strong>"Who owes me money?"</strong></li>
+        <li><strong>"How did we do this week?"</strong></li>
+        <li><strong>"Should I hire another tech?"</strong></li>
+        <li><strong>"Who's my best tech?"</strong></li>
+    </ul>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="schedule">
+    <h2>Schedule & Dispatch</h2>
+    <p>See who's going where. Day, week, or month view.</p>
+
+    <div class="sc"><img src="screenshots/dispatch-day.png" alt="Dispatch board" loading="lazy"></div>
+    <p class="sc-cap">Day view: each tech's jobs in time order</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/schedule-week.png" alt="Week view" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/schedule-month.png" alt="Month view" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Week view shows workload per tech. Month view shows busy days.</p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="plan-day">
+    <h2>Plan My Day</h2>
+    <p>Tap one button. The AI rearranges your schedule to save drive time.</p>
+
+    <div class="sc"><img src="screenshots/plan-my-day-results.png" alt="Plan My Day" loading="lazy"></div>
+    <p class="sc-cap">AI proposals with Confirm/Reject per change, or Approve All</p>
+
+    <p>The AI looks at every job, every tech's location, and suggests better assignments. You review each change and confirm. No appointment moves without your say-so.</p>
+
+    <div class="co co-green">
+        <strong>You're always in control</strong>
+        The AI suggests. You decide. Run it again anytime you add new jobs.
+    </div>
+</section>
+
+<section class="guide-section" id="phone-agent">
+    <h2>AI Phone Agent</h2>
+    <p>An AI receptionist answers your business calls, books jobs into Nyva, and sends customers a text confirmation. All without you picking up the phone.</p>
+
+    <h3>How a Call Works</h3>
+    <p>Customer calls your business number. The AI greets them, asks what they need, collects their name, address, and preferred timing. It checks your live schedule, offers available slots, and books the job once they pick a time.</p>
+    <p>Before booking, the AI asks: <strong>&ldquo;Is it okay to text you at this number?&rdquo;</strong> If they say yes, they get an SMS confirmation. If they decline, no texts are sent.</p>
+
+    <h3>Address Verification</h3>
+    <p>After the call, Nyva verifies the address against Google Maps. If the address is approximate or unrecognized, a warning appears in the job notes so you can confirm with the customer before dispatching a tech.</p>
+
+    <h3>What You See</h3>
+    <p>AI-booked jobs appear with a purple <strong>AI Booked</strong> badge on your jobs list and dashboard. They work exactly like manual jobs. Edit, reassign, or cancel them as needed.</p>
+
+    <div class="co co-green">
+        <strong>SMS consent handled automatically</strong>
+        The AI collects verbal consent during the call. No manual checkbox needed for phone-booked customers.
+    </div>
+</section>
+<hr class="section-divider">
+
+<!-- ═══════ MANAGING WORK ═══════ -->
+<div class="part-header"><h2>Managing Work</h2><p>Jobs, customers, invoices, and getting paid</p></div>
+
+<section class="guide-section" id="jobs">
+    <h2>Jobs</h2>
+    <p>Your operations view: today's schedule, what needs attention, and the full job list.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/jobs-list.png" alt="Operations view" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/jobs-all.png" alt="All jobs" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Operations view (left) and All Jobs with filters (right)</p>
+
+    <h3>Job Status, What Each One Means</h3>
+    <p>Every job moves through these stages. The status pill on each job card tells you exactly where it is.</p>
+    <table class="ft">
+        <thead><tr><th>Status</th><th>What It Means</th></tr></thead>
+        <tbody>
+            <tr><td>Scheduled</td><td>Job is on the calendar, assigned (or waiting to be), but work hasn't started yet. Blue pill.</td></tr>
+            <tr><td>In Progress</td><td>Tech has tapped "Start" and is actively working the job. Amber pill.</td></tr>
+            <tr><td>Completed</td><td>Tech tapped "Complete". An invoice has been created. Green pill.</td></tr>
+            <tr><td>Overdue</td><td>Scheduled start time has passed but the tech hasn't started. Red highlight. Call your tech.</td></tr>
+            <tr><td>Cancelled</td><td>Job was called off. Shown grayed out. Doesn't count toward revenue or completion stats.</td></tr>
+            <tr><td>Estimate</td><td>Job started life as a quote. Converts to Scheduled once the customer approves the estimate.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Job Detail</h3>
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/job-detail.png" alt="Scheduled job" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/job-detail-completed.png" alt="Completed job" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Status tracker shows exactly where the job is. Tap to call customer or navigate.</p>
+
+    <p>The job detail page has everything about one job in one place:</p>
+    <ul class="fl">
+        <li><strong>Customer card</strong>: tap the phone number to call, tap the address to open it in Maps.</li>
+        <li><strong>Status tracker</strong>: visual timeline: Scheduled &rarr; In Progress &rarr; Completed &rarr; Invoiced &rarr; Paid.</li>
+        <li><strong>Job details</strong>: type, description, scheduled time, estimated duration, assigned tech.</li>
+        <li><strong>Photos</strong>: before and after photos the tech took on site.</li>
+        <li><strong>Notes</strong>: dispatcher notes for the tech, or tech notes about what was done.</li>
+        <li><strong>Invoice</strong>: once the job is completed, the invoice block appears with line items and payment status.</li>
+        <li><strong>Warranty</strong>: if you set one (e.g., 12 months parts &amp; labor), the expiration date shows here.</li>
+    </ul>
+
+    <div class="sc"><img src="screenshots/invoice-view.png" alt="Invoice" loading="lazy"></div>
+    <p class="sc-cap">Completed job: line items, invoice number, payment status, Download PDF</p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="new-job">
+    <h2>Create a Job</h2>
+    <p>Tap + anywhere in the app. Fill in the details. The AI suggests the best tech.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/job-new-form.png" alt="New job form" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/job-new-customer-selected.png" alt="AI tech suggestions" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Fill in customer and job type. The AI shows you which tech is closest, available, and best matched.</p>
+
+    <h3>Every Field on the New Job Form</h3>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>What to Put In It</th></tr></thead>
+        <tbody>
+            <tr><td>Customer *</td><td>Pick an existing customer, or tap "+ New Customer" to add one on the spot. The customer's address auto-fills the job address.</td></tr>
+            <tr><td>Job Type *</td><td>"Water Heater Install", "AC Repair", "Drain Clog". Plain English. This is what shows up on your calendar cards and reports.</td></tr>
+            <tr><td>Description</td><td>Details for the tech: "Customer says water heater is leaking from the bottom. Has shut-off valve." Optional but useful.</td></tr>
+            <tr><td>Address</td><td>Auto-fills from the customer. Override if the job is at a different property (common for commercial customers with multiple locations).</td></tr>
+            <tr><td>Unit / Apt</td><td>Apartment number, suite, or unit label. Keeps the tech from knocking on the wrong door.</td></tr>
+            <tr><td>Scheduled Date &amp; Time</td><td>When the tech should show up. Leave blank to create an unscheduled job you can drag onto the calendar later.</td></tr>
+            <tr><td>Estimated Duration</td><td>How long you think it'll take, in minutes. Defaults to your job-type default from Settings. Used to block time on the calendar.</td></tr>
+            <tr><td>Assigned Tech</td><td>Pick a tech manually, or leave blank and let the AI suggest. The green "BEST" badge marks the top pick.</td></tr>
+            <tr><td>Estimated Price</td><td>Optional. Shows on the job card so you know what each day's schedule is worth before the jobs are done.</td></tr>
+            <tr><td>Deposit</td><td>Optional. Fixed amount ($500) or percentage (50%). Required for big installs where you want money up front before buying parts.</td></tr>
+            <tr><td>Warranty</td><td>Optional. Duration in months (e.g., 12) + type (Parts, Labor, or Full). Nyva tracks expiration and alerts you 30 days before it runs out.</td></tr>
+            <tr><td>Notes</td><td>Internal notes. Not shown to the customer.</td></tr>
+        </tbody>
+    </table>
+    <p class="sc-cap">* Required. Everything else is optional but recommended.</p>
+
+    <div class="co co-purple">
+        <strong>Smart Suggestions</strong>
+        Nyva recommends the best tech based on distance, availability, and your dispatch rules. The green "BEST" badge shows the top pick. You can always override and pick a different tech.
+    </div>
+
+    <h3>Estimates vs Jobs</h3>
+    <p>Need to quote before you commit? Create an <strong>Estimate</strong> instead. Same form, but it starts in Draft status. You send it to the customer by SMS or email, they tap a link to approve, and the estimate converts into a scheduled job automatically.</p>
+    <table class="ft">
+        <thead><tr><th>Estimate Status</th><th>What It Means</th></tr></thead>
+        <tbody>
+            <tr><td>Draft</td><td>You've created it but haven't sent it yet. Edit freely.</td></tr>
+            <tr><td>Sent</td><td>Customer got the link. Waiting on them.</td></tr>
+            <tr><td>Approved</td><td>Customer tapped "Approve". Converts to a scheduled job.</td></tr>
+            <tr><td>Declined</td><td>Customer said no. Stays on file for your records.</td></tr>
+            <tr><td>Expired</td><td>30 days passed with no response. Auto-expires. Resend or let it go.</td></tr>
+        </tbody>
+    </table>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="complete-job">
+    <h2>Complete a Job</h2>
+    <p>Three steps, under 60 seconds. Photos, review the invoice, collect payment.</p>
+
+    <div class="flow">
+        <div class="step">
+            <div class="step-label">Step 1: Photos</div>
+            <img src="screenshots/completion-photo-prompt.png" alt="Take photos" loading="lazy">
+            <div class="step-cap">Take after photos or skip</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Step 2: Review</div>
+            <img src="screenshots/completion-review.png" alt="Review invoice" loading="lazy">
+            <div class="step-cap">Set hours, add parts, apply discount</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Step 3: Payment</div>
+            <img src="screenshots/completion-payment.png" alt="Collect payment" loading="lazy">
+            <div class="step-cap">Pick how the customer pays</div>
+        </div>
+    </div>
+
+    <h3>Payment Options</h3>
+    <div class="flow">
+        <div class="step">
+            <div class="step-label">QR Code</div>
+            <img src="screenshots/completion-qr-code.png" alt="QR code" loading="lazy">
+            <div class="step-cap">Customer scans with their phone camera</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Cash / Check</div>
+            <img src="screenshots/completion-cash.png" alt="Cash payment" loading="lazy">
+            <div class="step-cap">Mark as received, pick Cash or Check</div>
+        </div>
+        <div class="step">
+            <div class="step-label">Done!</div>
+            <img src="screenshots/completion-done.png" alt="Payment confirmed" loading="lazy">
+            <div class="step-cap">Payment received. Receipt sent automatically.</div>
+        </div>
+    </div>
+
+    <div class="co co-green">
+        <strong>Under 60 seconds</strong>
+        Tap complete, review invoice, collect payment. Customer gets a receipt. Done.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="customers">
+    <h2>Customers</h2>
+    <p>Your customer list, with search, filters, and full history on every profile.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/customers-list.png" alt="Customer list" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/customers-search.png" alt="Search customers" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">39 customers with filters. Search by name, phone, or address.</p>
+
+    <h3>Customer Profile</h3>
+    <div class="sc"><img src="screenshots/customer-profile.png" alt="Customer profile" loading="lazy"></div>
+    <p class="sc-cap">Lifetime value, job history, contact info, dispatch notes. Everything before a job.</p>
+
+    <p>Everything you need before dispatching a tech. The profile shows:</p>
+    <ul class="fl">
+        <li><strong>Contact info</strong>: name, phone, email, service address. Tap phone to call, tap address for Maps.</li>
+        <li><strong>Lifetime value</strong>: total paid across all jobs. The number that matters for your top customers.</li>
+        <li><strong>Job history</strong>: every past job with status, date, amount, and tech. Tap any row for the details.</li>
+        <li><strong>Outstanding balance</strong>: any unpaid invoices on this customer, so you know before you call.</li>
+        <li><strong>Tags</strong>: labels you set (VIP, Difficult, Cash Only, etc.) to flag behavior your whole team should know.</li>
+        <li><strong>Dispatch notes</strong>: "Dog in backyard", "Gate code 1234", "Call before arriving". Shown to every tech on every job for this customer.</li>
+        <li><strong>Source</strong>: how you found them: Google, referral, repeat. Feeds into Sam's marketing insights.</li>
+    </ul>
+
+    <h3>Add a Customer</h3>
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/customer-add-form.png" alt="Add customer" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/customer-add-form-bottom.png" alt="Commercial fields" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Residential or Commercial. Commercial adds billing contact, payment terms, and properties.</p>
+
+    <h3>Every Field on the Customer Form</h3>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>What to Put In It</th></tr></thead>
+        <tbody>
+            <tr><td>First / Last Name *</td><td>Required. This is how they appear everywhere in the app.</td></tr>
+            <tr><td>Phone</td><td>Mobile number in E.164 format (e.g., +15125551234). Used for SMS confirmations, payment links, and review requests.</td></tr>
+            <tr><td>Email</td><td>For invoice delivery, estimate links, and receipts. Especially important for commercial accounts.</td></tr>
+            <tr><td>Address, City, State, ZIP</td><td>Primary service address. Used as the default when you create a job for this customer.</td></tr>
+            <tr><td>Customer Type</td><td>Residential or Commercial. Changes the fields you see below and the default payment terms.</td></tr>
+            <tr><td>Source</td><td>Freeform: "Google", "Yelp", "Referral from Maria", "Repeat". Feeds Sam's marketing reports.</td></tr>
+            <tr><td>Tags</td><td>Your own labels: "VIP", "Cash Only", "Commercial", "Monthly Maintenance".</td></tr>
+            <tr><td>SMS Consent</td><td>Defaults to checked. Uncheck if the customer specifically told you not to text them. Required for TCPA compliance.</td></tr>
+            <tr><td>Notes</td><td>Dispatch notes shown to techs (see above).</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Residential vs Commercial</h3>
+    <table class="ft">
+        <thead><tr><th>&nbsp;</th><th>Residential</th><th>Commercial</th></tr></thead>
+        <tbody>
+            <tr><td>Payment Terms</td><td>Due on receipt</td><td>Net 15, 30, 60, or 90 days. Your choice</td></tr>
+            <tr><td>Billing Contact</td><td>Same as customer</td><td>Separate billing name and email (accounts payable department)</td></tr>
+            <tr><td>Properties</td><td>One address</td><td>Multiple addresses. One account can own 10 locations</td></tr>
+            <tr><td>Badge</td><td>None</td><td>"Contract Vendor" badge on the profile</td></tr>
+            <tr><td>Invoice Delivery</td><td>SMS payment link is default</td><td>Email PDF is default</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Commercial Accounts</h3>
+    <div class="sc"><img src="screenshots/customer-commercial-detail.png" alt="Commercial customer" loading="lazy"></div>
+    <p class="sc-cap">"Contract vendor" badge. Net 30/60/90 terms, separate billing contact.</p>
+    <p>When you create a job for a commercial customer, Nyva automatically uses their payment terms on the invoice (e.g., "Due Dec 15, 2026" for a Net 30 invoiced Nov 15). Invoices go to the billing email, not the contact email.</p>
+
+    <div class="co co-blue">
+        <strong>SMS Consent</strong>
+        Every time you create a customer by hand, the SMS consent box starts unchecked. You have to tick it. When the AI phone agent books a job, it asks the customer verbally during the call and records consent automatically.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="invoicing">
+    <h2>Invoicing & Payment</h2>
+    <p>Nyva creates invoices automatically when a job is completed. Time and materials, the industry standard.</p>
+
+    <div class="sc"><img src="screenshots/invoice-view.png" alt="Invoice view" loading="lazy"></div>
+    <p class="sc-cap">Line items, invoice number, status, Download PDF, payment date</p>
+
+    <h3>What's On Every Invoice</h3>
+    <ul class="fl">
+        <li><strong>Invoice number</strong>: auto-generated (INV-001, INV-002...). You never type this.</li>
+        <li><strong>Customer &amp; address</strong>: pulled from the customer profile.</li>
+        <li><strong>Labor line</strong>: hours &times; your hourly rate. The tech enters hours worked when completing the job.</li>
+        <li><strong>Parts lines</strong>: each part added by the tech, with quantity and price.</li>
+        <li><strong>Discount</strong>: if the tech applied one (limited to your "Max Discount" setting).</li>
+        <li><strong>Subtotal</strong>: labor + parts &minus; discount.</li>
+        <li><strong>Tax</strong>: subtotal &times; your tax rate from Settings.</li>
+        <li><strong>Total</strong>: what the customer pays.</li>
+        <li><strong>Due date</strong>: today for residential, or based on the commercial customer's payment terms (e.g., Net 30).</li>
+    </ul>
+
+    <h3>Invoice Status</h3>
+    <table class="ft">
+        <thead><tr><th>Status</th><th>What It Means</th></tr></thead>
+        <tbody>
+            <tr><td>Draft</td><td>Created but not sent. You can still edit line items, add parts, or apply discounts.</td></tr>
+            <tr><td>Awaiting Payment</td><td>Sent to the customer. Nyva is watching for the payment to come in.</td></tr>
+            <tr><td>Paid</td><td>Customer paid. Invoice is locked. Receipt sent automatically.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Payment Methods</h3>
+    <table class="ft">
+        <thead><tr><th>Method</th><th>How It Works</th><th>Fee</th></tr></thead>
+        <tbody>
+            <tr><td>Card (QR Code)</td><td>Tech shows a QR code on their phone. Customer scans with their phone camera, pays via Stripe.</td><td>2.9% + $0.30</td></tr>
+            <tr><td>Payment Link (SMS)</td><td>Customer gets a text with a short link. Taps it, pays online, gets a receipt.</td><td>2.9% + $0.30</td></tr>
+            <tr><td>Payment Link (Email)</td><td>Same link, delivered by email. Default for commercial accounts with billing departments.</td><td>2.9% + $0.30</td></tr>
+            <tr><td>Tap to Pay (Terminal)</td><td>In-person card reader. Customer taps or inserts their card on your iPad or Android device.</td><td>2.7% + $0.05</td></tr>
+            <tr><td>Cash</td><td>Tech collects cash on site and marks "Paid. Cash". Invoice closes immediately.</td><td>None</td></tr>
+            <tr><td>Check</td><td>Tech marks "Paid. Check" and records the check number in the payment note.</td><td>None</td></tr>
+            <tr><td>Paid External</td><td>Customer paid through another system (Venmo, Zelle, wire). Tech marks it paid so your books match reality.</td><td>None</td></tr>
+        </tbody>
+    </table>
+
+    <p>Payments show on your dashboard in real time. When Stripe confirms a card payment, the invoice flips to Paid within seconds.</p>
+
+    <div class="co co-green">
+        <strong>Clean Payment Links</strong>
+        When you send an invoice by text, Nyva creates a short link (not the long Stripe URL). The customer taps it, pays, and gets a receipt. Simple.
+    </div>
+
+    <h3>Deposits for Big Jobs</h3>
+    <p>On a big install (water heater replacement, HVAC swap), you can require a deposit before the job starts. Set it when creating the job:</p>
+    <ul class="fl">
+        <li><strong>Fixed amount</strong>: e.g., $500 down.</li>
+        <li><strong>Percentage</strong>: e.g., 50% of the estimated total.</li>
+    </ul>
+    <p>The customer pays the deposit via the same payment link. The job moves forward only after the deposit clears. The final invoice credits the deposit against the total.</p>
+
+    <h3>After Payment</h3>
+    <p>When a customer pays, Nyva automatically sends a receipt by text and email. The receipt includes the amount paid and your business name.</p>
+
+    <h3>Resending Receipts</h3>
+    <p>Customer lost their receipt? Go to the completed job, and you'll see <strong>PDF</strong> and <strong>Send Receipt</strong> buttons. You can also send to a different phone number or email. Useful for commercial customers who need receipts sent to their billing department.</p>
+    <p>Technicians can do this too. Right from their job detail screen.</p>
+
+    <div class="co co-green">
+        <strong>Paid Jobs Are Locked</strong>
+        Once an invoice is paid, the job is locked. No one can add or remove line items, photos, or parts. This protects your accounting records.
+    </div>
+</section>
+
+<!-- ═══════ YOUR BUSINESS ═══════ -->
+<div class="part-header"><h2>Your Business</h2><p>Reviews, team, reports, and settings</p></div>
+
+<section class="guide-section" id="reviews">
+    <h2>Reviews</h2>
+    <p>All customer feedback in one place.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/reviews-list.png" alt="Reviews overview" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/reviews-cards.png" alt="Review cards" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Average rating, star breakdown, and individual reviews sorted newest-first</p>
+    <p>Low ratings (1-2 stars) stand out so you can follow up. Filter by tech to see who's getting the best reviews.</p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="team">
+    <h2>Team</h2>
+    <p>See how each tech is performing. Add new team members in seconds.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/team-cards.png" alt="Team members" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/tech-profile-stats.png" alt="Tech stats" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Team list with contact info and rates. Tap the chart icon for performance stats.</p>
+
+    <div class="sc"><img src="screenshots/team-edit-member.png" alt="Edit team member" loading="lazy"></div>
+    <p class="sc-cap">Set role, hourly rate, specialties, and contractor status</p>
+
+    <table class="ft">
+        <thead><tr><th>Role</th><th>What They See</th></tr></thead>
+        <tbody>
+            <tr><td>Owner</td><td>Everything: all jobs, customers, invoices, financials, settings, Sam, reports</td></tr>
+            <tr><td>Technician</td><td>Only their assigned jobs, their calendar, and their own stats</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Adding Team Members</h3>
+    <p>Tap <strong>Add Member</strong>, enter their name and either an email or phone number. If you add them by phone, they'll get a text message with instructions to log in. No email needed.</p>
+
+    <div class="co co-blue">
+        <strong>Phone-Only Techs</strong>
+        Many technicians don't use email regularly. Nyva lets them sign in with just their phone number — enter it, get a text code, done. No passwords, no email required.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="reports">
+    <h2>Reports</h2>
+    <p>Revenue trends, job volume, and team output over time.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/reports-full.png" alt="Reports KPIs" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/reports-charts.png" alt="Reports charts" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">KPIs with date range filter. Charts for revenue, jobs completed, and average invoice value.</p>
+    <p>Pick a time range: Last 30 days, 3 months, 6 months, or custom. Tap Export CSV to download everything for your accountant.</p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="automations">
+    <h2>Automations</h2>
+    <p>Sam runs these for you automatically. Set them up once, they just work.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/settings-automations.png" alt="Automations" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/settings-automations2.png" alt="More automations" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Five automations, each with on/off toggle and run history</p>
+
+    <table class="ft">
+        <thead><tr><th>Automation</th><th>What It Does</th></tr></thead>
+        <tbody>
+            <tr><td>Invoice Reminders</td><td>Reminds customers about unpaid invoices at 7, 14, and 21 days</td></tr>
+            <tr><td>Estimate Follow-ups</td><td>Follows up on quotes not accepted after 5 days</td></tr>
+            <tr><td>Customer Re-engagement</td><td>Flags repeat customers who haven't booked in 90+ days</td></tr>
+            <tr><td>Review Requests</td><td>Sends review request 2 hours after job completion</td></tr>
+            <tr><td>Warranty Alerts</td><td>Notifies 30 days before a job warranty expires</td></tr>
+        </tbody>
+    </table>
+    <p>All SMS automations respect customer consent and quiet hours (no texts before 8am or after 9pm). Even if a toggle is on, no texts are sent to customers who haven't opted in. SMS consent is collected per customer. Either by checking the box when adding them manually, or automatically when the AI phone agent asks during a call.</p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="push-notifications">
+    <h2>Push Notifications</h2>
+    <p>Get real-time alerts on your phone — even when the app isn't open. Emergency jobs, schedule changes, and morning optimization results are delivered instantly.</p>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/16-settings-push-inactive.png" alt="Push notifications inactive" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/16-settings-push-active.png" alt="Push notifications active" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Before and after tapping "Re-register & Test Push"</p>
+
+    <table class="ft">
+        <thead><tr><th>Alert</th><th>Who Gets It</th><th>When It Fires</th><th>Opens</th></tr></thead>
+        <tbody>
+            <tr><td>Emergency Job Booked</td><td>Owner</td><td>AI phone agent books a job marked emergency</td><td>Job detail</td></tr>
+            <tr><td>Urgent Callback Needed</td><td>Owner</td><td>Caller wanted ASAP service but no slots were available</td><td>Jobs list</td></tr>
+            <tr><td>New Job Assignment</td><td>Technician</td><td>Owner (or AI) assigns a job to the tech</td><td>Tech job detail</td></tr>
+            <tr><td>Job Rescheduled</td><td>Technician</td><td>Scheduled time, date, or address changes on their job</td><td>Tech job detail</td></tr>
+            <tr><td>Schedule Optimized</td><td>Owner</td><td>Morning Plan My Day runs and auto-applies in 15 min</td><td>Calendar</td></tr>
+            <tr><td>Deposit Received</td><td>Owner</td><td>Customer pays an estimate deposit via Stripe</td><td>Estimates (Approved)</td></tr>
+            <tr><td>Job Auto-Assigned</td><td>Owner</td><td>AI auto-dispatches a job in trusted mode</td><td>Jobs list</td></tr>
+        </tbody>
+    </table>
+
+    <p><strong>How to enable:</strong> Go to Settings > Notifications > Push Notifications. If subscription shows "Inactive", tap "Re-register & Test Push". A test notification should appear on your device within seconds.</p>
+    <p><strong>In-app alerts:</strong> When a notification arrives while you're using the app, it appears as a toast at the top of the screen.</p>
+    <p><strong>Requires iOS app version 1.1 or later.</strong></p>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="settings">
+    <h2>Settings</h2>
+    <p>Your business profile, payments, integrations, and AI configuration.</p>
+
+    <div class="sc"><img src="screenshots/settings-top.png" alt="Subscription plan" loading="lazy"></div>
+    <p class="sc-cap">Your plan and included features</p>
+
+    <h3>Settings Tabs at a Glance</h3>
+    <table class="ft">
+        <thead><tr><th>Tab</th><th>What You Control</th></tr></thead>
+        <tbody>
+            <tr><td>Subscription Plan</td><td>Your current tier (Free / Starter / Pro / Enterprise), renewal date, upgrade or downgrade, manage billing portal.</td></tr>
+            <tr><td>Business Info</td><td>Organization name, phone, email, address, business type (Plumbing, HVAC, etc.), service areas.</td></tr>
+            <tr><td>Billing Defaults</td><td>Hourly rate, default payment terms, max discount a tech can give, tax rate, buffer time between jobs, per-job-type duration defaults.</td></tr>
+            <tr><td>Integrations</td><td>Stripe keys (for payments), Stripe Connect (for payouts), Email sender, QuickBooks sync, Google Places (address autocomplete).</td></tr>
+            <tr><td>Notifications</td><td>SMS and email preferences per notification type. Push notification re-register button.</td></tr>
+            <tr><td>AI &amp; Automations</td><td>Dispatch instructions (plain-English rules for the AI), dispatch mode toggles, Sam's briefing schedule, automation toggles.</td></tr>
+            <tr><td>Team &amp; Access</td><td>"I also work in the field" toggle (owner-as-tech), team member management shortcut.</td></tr>
+            <tr><td>Account</td><td>Your user profile, name, email, log out, delete account.</td></tr>
+        </tbody>
+    </table>
+
+    <div class="sc-pair">
+        <div class="sc"><img src="screenshots/settings-stripe.png" alt="Stripe" loading="lazy"></div>
+        <div class="sc"><img src="screenshots/settings-sam.png" alt="Sam config" loading="lazy"></div>
+    </div>
+    <p class="sc-cap">Connect Stripe for payments. Configure Sam's briefing day, time, and sections.</p>
+
+    <h3>Three Numbers to Get Right Early</h3>
+    <ol class="sl">
+        <li><strong>Hourly Rate</strong>: your labor rate (e.g., $125/hr). Every invoice calculates labor from this. Change it here and every new invoice uses the new rate.</li>
+        <li><strong>Tax Rate</strong>: your local sales tax percentage. Applied to every invoice subtotal.</li>
+        <li><strong>Max Discount</strong>: the most a tech can take off an invoice without calling you first. Keep your margins safe.</li>
+    </ol>
+
+    <h3>Integrations. What Each One Does</h3>
+    <table class="ft">
+        <thead><tr><th>Integration</th><th>What Happens If You Don't Set It Up</th></tr></thead>
+        <tbody>
+            <tr><td>Stripe</td><td>Card payments, QR codes, and payment links stop working. You can still take cash, check, and "paid external".</td></tr>
+            <tr><td>Stripe Connect</td><td>Money collected via Stripe waits in the platform account instead of being paid out to your bank. Set this up to get paid.</td></tr>
+            <tr><td>Email (Resend)</td><td>Transactional emails (estimates, invoices, receipts) don't send. SMS still works.</td></tr>
+            <tr><td>QuickBooks</td><td>You'll have to enter customers, invoices, and payments by hand in your accounting. (Pro plan)</td></tr>
+            <tr><td>Twilio (SMS)</td><td>Handled by Nyva. No setup needed. SMS costs are included in your plan.</td></tr>
+            <tr><td>AI Phone Agent (Retell)</td><td>Your business phone number won't be answered by the AI. Calls still come through to you normally. (Pro plan)</td></tr>
+            <tr><td>Google Places</td><td>You'll have to type full addresses by hand instead of selecting from suggestions. (Pro plan)</td></tr>
+        </tbody>
+    </table>
+
+    <p>QuickBooks integration syncs customers, invoices, and payments automatically. Your bookkeeper sees everything without you doing anything.</p>
+</section>
+<hr class="section-divider">
+
+<!-- ═══════ REFERENCE ═══════ -->
+<div class="part-header"><h2>Reference</h2><p>Deep detail on every metric, field, and setting. For when you need to look something up</p></div>
+
+<section class="guide-section" id="ref-dashboard">
+    <h2>Dashboard Metrics Reference</h2>
+    <p>Exact definitions for every number on the dashboard. Use this when you're reconciling with your accountant or trying to understand why a number moved.</p>
+
+    <h3>Main KPIs</h3>
+    <table class="ft">
+        <thead><tr><th>Metric</th><th>How It's Calculated</th></tr></thead>
+        <tbody>
+            <tr><td>Revenue (YTD)</td><td>Sum of <em>invoice totals</em> where the invoice is marked Paid AND the payment date is on or after January 1 of the current year. Does not include pending or overdue invoices. Compared to the same period last year.</td></tr>
+            <tr><td>Outstanding</td><td>Sum of invoice totals where status is not Paid AND the job is Completed. Open-ended. Includes invoices that went out yesterday as well as ones from months ago. Turns red if above $500 or anything is overdue.</td></tr>
+            <tr><td>Overdue (&gt;30 days)</td><td>Sum of invoice totals where status is not Paid AND the invoice was created more than 30 days ago. Always red. Subset of Outstanding.</td></tr>
+            <tr><td>Jobs Today</td><td>Count of jobs where the scheduled date is today (in your org's time zone) AND status is not Cancelled. Includes all statuses: Scheduled, In Progress, Completed.</td></tr>
+            <tr><td>Rating (Avg)</td><td>Average star rating across your last 200 customer reviews. Trend arrow compares the average of your latest 10 reviews to the 10 before that. Green if 4.5+, amber if 3.5&ndash;4.5, red below 3.5.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Yesterday's Summary</h3>
+    <table class="ft">
+        <thead><tr><th>Metric</th><th>How It's Calculated</th></tr></thead>
+        <tbody>
+            <tr><td>Jobs Completed</td><td>Count of jobs where status is Completed AND the scheduled date was yesterday.</td></tr>
+            <tr><td>Revenue Collected</td><td>Sum of invoice totals where the payment date was yesterday.</td></tr>
+            <tr><td>Reviews</td><td>Count of reviews with a creation date of yesterday.</td></tr>
+            <tr><td>Avg Rating (yesterday)</td><td>Average rating of reviews created yesterday. Blank if there were none.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>This Week</h3>
+    <table class="ft">
+        <thead><tr><th>Metric</th><th>How It's Calculated</th></tr></thead>
+        <tbody>
+            <tr><td>Jobs Total</td><td>Count of jobs where the scheduled date falls in the current week (Sunday through Saturday).</td></tr>
+            <tr><td>Jobs Completed</td><td>Count of jobs where status is Completed AND scheduled date is this week.</td></tr>
+            <tr><td>Revenue This Week</td><td>Sum of invoice totals where the payment date is in the current week.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Alert Cards (only show when applicable)</h3>
+    <table class="ft">
+        <thead><tr><th>Card</th><th>When It Appears</th></tr></thead>
+        <tbody>
+            <tr><td>Awaiting Payment</td><td>Any job with status Completed has an unpaid invoice. Shows customer name, invoice amount, due date, and days outstanding.</td></tr>
+            <tr><td>Pending Estimates</td><td>Any estimate has status Draft or Sent and is not Declined or Expired. Shows draft count, sent count, and pipeline value (sum of estimate totals).</td></tr>
+            <tr><td>Uninvoiced Completed Jobs</td><td>Any job scheduled today has status Completed but no invoice record. Usually means the tech forgot to run the completion flow.</td></tr>
+            <tr><td>Expiring Warranties</td><td>Any job has a warranty expiration date within the next 30 days. Prompts proactive maintenance outreach.</td></tr>
+            <tr><td>Upcoming Recurring Jobs</td><td>Any job from a recurring series is scheduled in the next 7 days. Early warning so you can staff it.</td></tr>
+        </tbody>
+    </table>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-jobs">
+    <h2>Job Fields &amp; Status Reference</h2>
+    <p>Every field you can set on a job, and every status a job can be in.</p>
+
+    <h3>Job Fields</h3>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>Type</th><th>Required</th></tr></thead>
+        <tbody>
+            <tr><td>Customer</td><td>Pick from customer list</td><td>Yes</td></tr>
+            <tr><td>Job Type</td><td>Freeform text</td><td>Yes</td></tr>
+            <tr><td>Description</td><td>Long text</td><td>No</td></tr>
+            <tr><td>Address</td><td>Street address (auto-fills from customer)</td><td>No</td></tr>
+            <tr><td>Unit / Apt</td><td>Short text</td><td>No</td></tr>
+            <tr><td>Scheduled Date/Time</td><td>Date + time</td><td>No (unscheduled jobs are allowed)</td></tr>
+            <tr><td>Estimated Duration</td><td>Number of minutes</td><td>No (defaults from job-type settings)</td></tr>
+            <tr><td>Assigned Tech</td><td>Pick from team, or leave blank for AI to assign</td><td>No</td></tr>
+            <tr><td>Estimated Price</td><td>Dollar amount</td><td>No</td></tr>
+            <tr><td>Deposit Type</td><td>Fixed ($) or Percentage (%)</td><td>No</td></tr>
+            <tr><td>Deposit Amount</td><td>Dollar amount or percentage</td><td>No</td></tr>
+            <tr><td>Warranty Months</td><td>Number of months</td><td>No</td></tr>
+            <tr><td>Warranty Type</td><td>Parts, Labor, or Full</td><td>No</td></tr>
+            <tr><td>Warranty Notes</td><td>Freeform text</td><td>No</td></tr>
+            <tr><td>Notes</td><td>Internal notes for the team (not shown to customer)</td><td>No</td></tr>
+            <tr><td>Source</td><td>Manual or AI Phone. Auto-set by the system</td><td>Auto</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Job Status Lifecycle</h3>
+    <table class="ft">
+        <thead><tr><th>Status</th><th>Set By</th><th>Goes To</th></tr></thead>
+        <tbody>
+            <tr><td>Unscheduled</td><td>Owner (new job with no time set)</td><td>Scheduled</td></tr>
+            <tr><td>Scheduled</td><td>Owner or AI (when time is set)</td><td>In Progress or Cancelled</td></tr>
+            <tr><td>In Progress</td><td>Tech (taps Start)</td><td>Completed or Cancelled</td></tr>
+            <tr><td>Completed</td><td>Tech (taps Complete)</td><td>(terminal. Invoice flow opens)</td></tr>
+            <tr><td>Cancelled</td><td>Owner</td><td>(terminal)</td></tr>
+            <tr><td>Estimate</td><td>Owner (creates as estimate)</td><td>Scheduled (on customer approval)</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Estimate Lifecycle</h3>
+    <table class="ft">
+        <thead><tr><th>Status</th><th>What Happens</th></tr></thead>
+        <tbody>
+            <tr><td>Draft</td><td>You built it but haven't sent it. Edit freely.</td></tr>
+            <tr><td>Sent</td><td>Customer got the link. Nyva is watching for approval, decline, or 30 days of silence.</td></tr>
+            <tr><td>Approved</td><td>Customer tapped Approve. System converts to a Scheduled job automatically.</td></tr>
+            <tr><td>Declined</td><td>Customer tapped Decline, or you marked it declined. Stays on file.</td></tr>
+            <tr><td>Expired</td><td>30 days after Sent with no response. Auto-set by the system. Resend or let it go.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Line Items</h3>
+    <p>Every invoice line has four parts:</p>
+    <ul class="fl">
+        <li><strong>Description</strong>: e.g., "Labor. 3 hrs @ $125/hr" or "Copper piping (10 ft)".</li>
+        <li><strong>Quantity</strong>: number of hours or units.</li>
+        <li><strong>Unit price</strong>: dollars per hour or per unit.</li>
+        <li><strong>Type</strong>: labor, parts, or other (used for reporting).</li>
+    </ul>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-customers">
+    <h2>Customer Fields Reference</h2>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>Type</th><th>Notes</th></tr></thead>
+        <tbody>
+            <tr><td>First Name *</td><td>Text</td><td>Required</td></tr>
+            <tr><td>Last Name *</td><td>Text</td><td>Required</td></tr>
+            <tr><td>Email</td><td>Email address</td><td>For invoices, estimates, receipts</td></tr>
+            <tr><td>Phone</td><td>Phone in E.164</td><td>For SMS confirmations and payment links</td></tr>
+            <tr><td>Address</td><td>Street address</td><td>Primary service location</td></tr>
+            <tr><td>City / State / ZIP</td><td>Text</td><td>&nbsp;</td></tr>
+            <tr><td>Customer Type</td><td>Residential or Commercial</td><td>Changes payment terms and billing contact behavior</td></tr>
+            <tr><td>Payment Terms (days)</td><td>Number</td><td>0 = due on receipt; 30 = Net 30; etc. Used for commercial accounts.</td></tr>
+            <tr><td>Billing Email</td><td>Email</td><td>Separate from primary email; used by commercial billing departments</td></tr>
+            <tr><td>Billing Name</td><td>Text</td><td>Separate name on invoices (e.g., "ACME Inc. Accounts Payable")</td></tr>
+            <tr><td>Properties</td><td>List of addresses</td><td>Commercial customers with multiple locations</td></tr>
+            <tr><td>Tags</td><td>List of short labels</td><td>Your own labels: VIP, Cash Only, etc.</td></tr>
+            <tr><td>Source</td><td>Freeform</td><td>"Google", "Referral", "Repeat". Feeds Sam's marketing insights</td></tr>
+            <tr><td>Notes</td><td>Long text</td><td>Dispatch notes shown to techs on every job</td></tr>
+            <tr><td>SMS Consent</td><td>Checkbox</td><td>Defaults unchecked. Required under TCPA before sending any SMS.</td></tr>
+        </tbody>
+    </table>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-invoice">
+    <h2>Invoice &amp; Payment Reference</h2>
+
+    <h3>Invoice Fields</h3>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>What It Is</th></tr></thead>
+        <tbody>
+            <tr><td>Invoice Number</td><td>Auto-generated sequential ID (INV-001, INV-002...).</td></tr>
+            <tr><td>Subtotal</td><td>Sum of all line items before tax.</td></tr>
+            <tr><td>Tax</td><td>Subtotal &times; tax rate from Settings.</td></tr>
+            <tr><td>Total</td><td>Subtotal + tax. What the customer pays.</td></tr>
+            <tr><td>Due Date</td><td>Today for residential; based on payment_terms_days for commercial.</td></tr>
+            <tr><td>Paid At</td><td>Timestamp when marked paid. Powers the "Paid" badge and receipt.</td></tr>
+            <tr><td>Payment Method</td><td>How they paid: stripe_card, stripe_terminal, cash, check, paid_external.</td></tr>
+            <tr><td>Payment Reference</td><td>Stripe transaction ID or check number.</td></tr>
+            <tr><td>Payment Note</td><td>Freeform notes ("partial payment", "paid via company card", etc.).</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Invoice Status</h3>
+    <table class="ft">
+        <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+        <tbody>
+            <tr><td>Draft</td><td>Not sent yet. Edit freely.</td></tr>
+            <tr><td>Awaiting Payment (Sent)</td><td>Sent to the customer. Nyva is watching for payment.</td></tr>
+            <tr><td>Paid</td><td>Locked. Receipt sent. Appears in revenue reports.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Payment Methods</h3>
+    <p>See the <a href="#invoicing" style="color:var(--b600);font-weight:600">Invoicing &amp; Payment</a> workflow section above for the detailed payment methods table with fees.</p>
+
+    <h3>Stripe Concepts</h3>
+    <table class="ft">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+            <tr><td>Stripe Publishable Key</td><td>Safe to share. Used by the app to accept cards. You paste this into Settings.</td></tr>
+            <tr><td>Stripe Secret Key</td><td>Never share. Used by the backend to finalize charges. You paste this into Settings.</td></tr>
+            <tr><td>Stripe Connect</td><td>OAuth flow that links your Stripe account to Nyva's platform so money flows to your bank automatically.</td></tr>
+            <tr><td>Stripe Terminal</td><td>A physical card reader (optional hardware) for tap-to-pay in the field. Lower fees than online payments.</td></tr>
+            <tr><td>Payment Link</td><td>A temporary Stripe URL Nyva creates and sends to the customer via SMS or email. Expires if unpaid.</td></tr>
+        </tbody>
+    </table>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-team">
+    <h2>Team &amp; Roles Reference</h2>
+
+    <h3>Plans &amp; Tech Limits</h3>
+    <table class="ft">
+        <thead><tr><th>Plan</th><th>Max Techs</th><th>Key Features</th></tr></thead>
+        <tbody>
+            <tr><td>Free</td><td>1</td><td>Calendar, jobs, photos, realtime</td></tr>
+            <tr><td>Starter</td><td>5</td><td>+ Stripe, SMS, email, push, PDFs, AI dispatch</td></tr>
+            <tr><td>Pro</td><td>Unlimited</td><td>+ AI phone agent, QuickBooks, reports, Google Places autocomplete</td></tr>
+            <tr><td>Enterprise</td><td>Unlimited</td><td>+ custom branding, API access</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Roles</h3>
+    <table class="ft">
+        <thead><tr><th>Role</th><th>What They See</th></tr></thead>
+        <tbody>
+            <tr><td>Owner</td><td>Everything: all jobs, customers, invoices, financials, settings, Sam, reports.</td></tr>
+            <tr><td>Technician</td><td>Only jobs assigned to them, their calendar, their own stats.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Technician Profile Fields</h3>
+    <table class="ft">
+        <thead><tr><th>Field</th><th>Meaning</th></tr></thead>
+        <tbody>
+            <tr><td>Hourly Rate</td><td>This tech's labor rate. Can differ from your default; used on invoices when this tech is assigned.</td></tr>
+            <tr><td>Specialties</td><td>Labels: "Water Heaters", "Gas Lines", "Commercial HVAC". Used by the AI to match techs to jobs.</td></tr>
+            <tr><td>Contractor</td><td>True = 1099, False = employee. Affects payroll reports.</td></tr>
+            <tr><td>Status</td><td>Active or Inactive. Inactive techs don't appear in dispatch or stats.</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Tech Performance Stats</h3>
+    <ul class="fl">
+        <li><strong>Jobs Completed</strong>: this week and all-time.</li>
+        <li><strong>Revenue Generated</strong>: invoice totals on jobs this tech completed.</li>
+        <li><strong>Avg Job Duration</strong>: average time from Start to Complete.</li>
+        <li><strong>Jobs Per Day</strong>: throughput measure.</li>
+        <li><strong>Utilization %</strong>: billable hours (on jobs) vs. scheduled hours.</li>
+        <li><strong>Avg Rating</strong>: customer review average for this tech's jobs.</li>
+    </ul>
+
+    <div class="co co-blue">
+        <strong>Owner as Technician</strong>
+        If you work in the field too, toggle "I also work in the field" in Settings. You get a tech profile and a "Your Performance" card on the team page alongside everyone else.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-sam">
+    <h2>Sam AI Reference</h2>
+    <p>Sam is Nyva's AI layer. It's four things in one: the weekly briefing, an advisor you can ask questions, the dispatch brain, and the phone agent.</p>
+
+    <h3>Weekly Briefing. What's In It</h3>
+    <p>Sam writes a briefing every week on the day and time you pick. Each section follows the same four-part structure:</p>
+    <ol class="sl">
+        <li><strong>What Happened</strong>: the numbers for the week.</li>
+        <li><strong>Why</strong>: root cause in plain English.</li>
+        <li><strong>Options</strong>: 2 or 3 things you could do.</li>
+        <li><strong>Recommended</strong>: the one Sam thinks is best, with reasoning.</li>
+    </ol>
+
+    <table class="ft">
+        <thead><tr><th>Section</th><th>What It Covers</th></tr></thead>
+        <tbody>
+            <tr><td>CFO (Money)</td><td>Revenue collected vs billed, overdue amounts, margin issues, payment collection ideas.</td></tr>
+            <tr><td>COO (Operations)</td><td>Schedule fill rate, job completion percentage, capacity issues, utilization trends.</td></tr>
+            <tr><td>Sales (Customers)</td><td>New vs repeat customers, dormant customer counts, pipeline from estimates.</td></tr>
+            <tr><td>Marketing (Reputation)</td><td>Review velocity, ratings, referral sources, seasonal patterns.</td></tr>
+            <tr><td>People (Team)</td><td>Top and bottom tech performers, workload balance, burnout risk.</td></tr>
+        </tbody>
+    </table>
+    <p>You can turn individual sections on or off in Settings. You can also send a test briefing anytime without waiting for the scheduled day.</p>
+
+    <h3>Ask Sam. What to Ask</h3>
+    <p>Sam routes your question to the right "domain" automatically based on the words you use. Examples:</p>
+    <table class="ft">
+        <thead><tr><th>Ask About</th><th>Example Questions</th></tr></thead>
+        <tbody>
+            <tr><td>Money (CFO)</td><td>"Who owes me money?" &middot; "What's my revenue this month?" &middot; "Why are my margins down?"</td></tr>
+            <tr><td>Operations (COO)</td><td>"How booked are we next week?" &middot; "Should I hire another tech?" &middot; "What's my completion rate?"</td></tr>
+            <tr><td>Sales</td><td>"Which customers haven't booked in 90 days?" &middot; "What's my repeat rate?" &middot; "Show my pipeline."</td></tr>
+            <tr><td>Marketing</td><td>"How are my reviews trending?" &middot; "Where do my customers come from?" &middot; "Am I in a slow season?"</td></tr>
+            <tr><td>People</td><td>"Who's my best tech?" &middot; "Who's underperforming?" &middot; "Is anyone overloaded?"</td></tr>
+        </tbody>
+    </table>
+    <p>Sam answers in plain English and often shows "smart buttons" you can tap to run the suggested action. Like sending invoice reminders or pulling up a dormant-customer call list.</p>
+
+    <h3>Plan My Day. What You See</h3>
+    <p>When you tap "Plan My Day", Sam looks at every unassigned or reassignable job today and proposes a better plan. The results modal shows:</p>
+    <ul class="fl">
+        <li><strong>Proposed assignments per tech</strong>: who goes where, and in what order.</li>
+        <li><strong>Drive time saved</strong>: vs. the current plan.</li>
+        <li><strong>Total drive time</strong>: across all techs for the day.</li>
+        <li><strong>Utilization %</strong>: time in jobs vs. driving.</li>
+        <li><strong>Per-tech breakdown</strong>: jobs count, service areas covered.</li>
+    </ul>
+    <p>You can confirm all proposals at once, or confirm/reject each one individually. If you do nothing, Plan My Day auto-applies after 30 minutes (if you've enabled auto-approve in Settings).</p>
+
+    <h3>AI Phone Agent. What You See After a Call</h3>
+    <ul class="fl">
+        <li><strong>Call transcript</strong>: stored on the created job. Turn-by-turn conversation you can read.</li>
+        <li><strong>Auto-created job</strong>: pre-filled with customer name, description, address, and scheduled time, marked with a purple "AI Booked" badge.</li>
+        <li><strong>Fallback notification</strong>: if the AI couldn't book (outside service area, no slots, weird request), you get an SMS saying "Call at [time] needs your attention".</li>
+    </ul>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-notifications">
+    <h2>Notifications Reference</h2>
+    <p>Every notification Nyva can send, who gets it, and how to turn it on or off.</p>
+
+    <h3>Job &amp; Payment Notifications</h3>
+    <table class="ft">
+        <thead><tr><th>Type</th><th>When</th><th>Channel</th><th>Recipient</th></tr></thead>
+        <tbody>
+            <tr><td>Job Confirmation</td><td>Owner schedules a job</td><td>SMS, Email, Push</td><td>Customer + Tech</td></tr>
+            <tr><td>Job Reminder</td><td>Day before the job</td><td>SMS, Email, Push</td><td>Customer + Tech</td></tr>
+            <tr><td>Payment Request</td><td>Invoice created</td><td>SMS, Email</td><td>Customer</td></tr>
+            <tr><td>Review Request</td><td>2 hours after job completion</td><td>SMS, Email</td><td>Customer</td></tr>
+            <tr><td>Payment Receipt</td><td>Payment cleared</td><td>SMS, Email</td><td>Customer</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Automations</h3>
+    <table class="ft">
+        <thead><tr><th>Automation</th><th>Trigger</th><th>Action</th></tr></thead>
+        <tbody>
+            <tr><td>Invoice Reminders</td><td>Unpaid invoice hits 7, 14, or 21 days old</td><td>Sends SMS reminder to customer</td></tr>
+            <tr><td>Estimate Follow-ups</td><td>Estimate sent but untouched for 5 days</td><td>Sends SMS follow-up to customer</td></tr>
+            <tr><td>Customer Re-engagement</td><td>Repeat customer inactive 90+ days</td><td>Adds to owner's "call list" (no SMS)</td></tr>
+            <tr><td>Review Requests</td><td>Job completed</td><td>Sends review link 2 hours later</td></tr>
+            <tr><td>Warranty Alerts</td><td>Warranty within 30 days of expiring</td><td>Notifies owner (push + SMS + email)</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Push Notifications</h3>
+    <p>Sent to the iPhone app and web browser. Enable them in Settings &gt; Notifications.</p>
+    <table class="ft">
+        <thead><tr><th>Alert</th><th>Who Gets It</th><th>When It Fires</th><th>Opens</th></tr></thead>
+        <tbody>
+            <tr><td>Emergency Job Booked</td><td>Owner</td><td>AI phone agent books a job marked emergency</td><td>Job detail</td></tr>
+            <tr><td>Urgent Callback Needed</td><td>Owner</td><td>Caller wanted ASAP service but no slots were available</td><td>Jobs list</td></tr>
+            <tr><td>New Job Assignment</td><td>Technician</td><td>Owner (or AI) assigns a job to the tech</td><td>Tech job detail</td></tr>
+            <tr><td>Job Rescheduled</td><td>Technician</td><td>Scheduled time, date, or address changes on their job</td><td>Tech job detail</td></tr>
+            <tr><td>Schedule Optimized</td><td>Owner</td><td>Morning Plan My Day runs and auto-applies in 15 min</td><td>Calendar</td></tr>
+            <tr><td>Deposit Received</td><td>Owner</td><td>Customer pays an estimate deposit via Stripe</td><td>Estimates (Approved)</td></tr>
+            <tr><td>Job Auto-Assigned</td><td>Owner</td><td>AI auto-dispatches a job in trusted mode</td><td>Jobs list</td></tr>
+        </tbody>
+    </table>
+
+    <h3>TCPA &amp; Quiet Hours</h3>
+    <p>All SMS respects these rules automatically:</p>
+    <ul class="fl">
+        <li>No SMS before 8am or after 9pm in the customer's time zone.</li>
+        <li>No SMS to customers without recorded consent.</li>
+        <li>"STOP" replies unsubscribe the customer from all future SMS.</li>
+        <li>"HELP" replies return your business name and a help number.</li>
+    </ul>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-settings">
+    <h2>Settings Index</h2>
+    <p>Every toggle and field in Settings, grouped by tab. Use this to find where something lives.</p>
+
+    <h3>Business Info</h3>
+    <ul class="fl">
+        <li>Organization name, phone, email, address</li>
+        <li>Business type (dropdown)</li>
+        <li>Service areas (comma-separated)</li>
+    </ul>
+
+    <h3>Billing Defaults</h3>
+    <ul class="fl">
+        <li>Hourly rate (default labor rate)</li>
+        <li>Tax rate (%)</li>
+        <li>Max discount (%)</li>
+        <li>Default payment terms (days)</li>
+        <li>Buffer time between jobs (minutes)</li>
+        <li>Per-job-type defaults: duration, hourly rate</li>
+    </ul>
+
+    <h3>Integrations</h3>
+    <ul class="fl">
+        <li>Stripe publishable key + secret key</li>
+        <li>Stripe Connect (OAuth connect/disconnect)</li>
+        <li>Sender email</li>
+        <li>QuickBooks (connect/disconnect)</li>
+        <li>AI Phone Agent number</li>
+    </ul>
+
+    <h3>Notifications (Owner Preferences)</h3>
+    <ul class="fl">
+        <li>SMS job confirmations (toggle)</li>
+        <li>SMS job reminders (toggle)</li>
+        <li>SMS payment requests (toggle)</li>
+        <li>SMS review requests (toggle)</li>
+        <li>Email job confirmations (toggle)</li>
+        <li>Email payment requests (toggle)</li>
+        <li>Re-register push notifications (button + test)</li>
+    </ul>
+
+    <h3>AI &amp; Automations</h3>
+    <ul class="fl">
+        <li>Dispatch instructions (freeform plain-English rules)</li>
+        <li>Dispatch mode (enabled / disabled)</li>
+        <li>Auto-assign unassigned jobs (toggle)</li>
+        <li>Route optimization / Plan My Day (toggle)</li>
+        <li>Phone agent suggestions (toggle)</li>
+        <li>Briefing day (dropdown)</li>
+        <li>Briefing time (HH:MM UTC)</li>
+        <li>Briefing sections enabled (CFO, COO, Sales, Marketing, People)</li>
+        <li>Send briefing via SMS (toggle)</li>
+        <li>Send test briefing (button)</li>
+        <li>Per-automation on/off: Invoice Reminders, Estimate Follow-ups, Re-engagement, Review Requests, Warranty Alerts</li>
+    </ul>
+
+    <h3>Team &amp; Access</h3>
+    <ul class="fl">
+        <li>"I also work in the field" toggle (creates owner-as-tech profile)</li>
+        <li>Add team member (by email or phone)</li>
+    </ul>
+
+    <h3>Account</h3>
+    <ul class="fl">
+        <li>User email (display)</li>
+        <li>First / last name (edit)</li>
+        <li>Log out</li>
+        <li>Delete account (requires typing "DELETE" to confirm)</li>
+    </ul>
+
+    <h3>Subscription Plan</h3>
+    <ul class="fl">
+        <li>Current tier display</li>
+        <li>Current period end date</li>
+        <li>Upgrade / downgrade</li>
+        <li>Manage billing portal (Stripe customer portal)</li>
+        <li>Cancel subscription</li>
+    </ul>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="ref-glossary">
+    <h2>Glossary</h2>
+    <p>Plain-English definitions for every term you'll see in Nyva.</p>
+
+    <table class="ft">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+            <tr><td>AI Booked</td><td>A job created by the AI phone agent instead of by you. Shown with a purple badge on job cards.</td></tr>
+            <tr><td>Awaiting Payment</td><td>An invoice that has been sent to the customer but not paid yet.</td></tr>
+            <tr><td>Buffer Time</td><td>Minutes of empty space between jobs on the calendar so techs can travel and eat lunch.</td></tr>
+            <tr><td>Completed (status)</td><td>The tech has finished the job and generated an invoice. Not the same as Paid.</td></tr>
+            <tr><td>Contract Vendor</td><td>Badge shown on commercial customer profiles with ongoing payment terms.</td></tr>
+            <tr><td>Deposit</td><td>Partial payment collected before work begins on big jobs.</td></tr>
+            <tr><td>Dispatch Instructions</td><td>Plain-English rules you write for the AI (e.g., "Maria handles all gas line jobs").</td></tr>
+            <tr><td>Dormant Customer</td><td>A repeat customer who hasn't booked in 90+ days. Sam flags these for re-engagement.</td></tr>
+            <tr><td>Estimate</td><td>A quote sent to a customer for approval before becoming a job.</td></tr>
+            <tr><td>Fill Rate</td><td>Percentage of your tech's scheduled hours that are actually booked with jobs.</td></tr>
+            <tr><td>Hourly Rate</td><td>Your labor rate per hour. Used on every invoice to calculate labor charges.</td></tr>
+            <tr><td>Invoice Number</td><td>Unique sequential ID auto-generated for each invoice (INV-001, INV-002...).</td></tr>
+            <tr><td>Line Item</td><td>A single row on an invoice: labor hours, a part, a discount, or anything else.</td></tr>
+            <tr><td>Net 30 / Net 60</td><td>Commercial payment terms. Customer has 30 or 60 days to pay after invoice date.</td></tr>
+            <tr><td>Optimization</td><td>Plan My Day rearranging your schedule to minimize drive time.</td></tr>
+            <tr><td>Org</td><td>Your business account in Nyva. One org = one business. Team members all belong to the same org.</td></tr>
+            <tr><td>Outstanding</td><td>Total dollars owed to you across all unpaid invoices.</td></tr>
+            <tr><td>Overdue</td><td>An invoice that's more than 30 days old and still unpaid.</td></tr>
+            <tr><td>Payment Link</td><td>A short URL Nyva generates so customers can pay by tapping a link in a text message.</td></tr>
+            <tr><td>Payment Terms</td><td>How many days a customer has to pay after invoice date (0 for residential, 30 for Net 30, etc.).</td></tr>
+            <tr><td>Pending Estimates</td><td>Estimates you've sent but haven't gotten a yes/no on yet.</td></tr>
+            <tr><td>Pipeline Value</td><td>Total dollars represented by pending estimates. Your potential revenue if everything converts.</td></tr>
+            <tr><td>Prefetch</td><td>Nyva loading your data in the background after login so pages open instantly.</td></tr>
+            <tr><td>Recurring Series</td><td>A set of jobs created on a repeating schedule (e.g., quarterly HVAC maintenance).</td></tr>
+            <tr><td>Sam</td><td>Nyva's AI layer: weekly briefings, Ask Sam advisor, dispatch brain, and phone agent.</td></tr>
+            <tr><td>SMS Consent</td><td>Customer's recorded permission to send them text messages. Required by TCPA law.</td></tr>
+            <tr><td>Source</td><td>How a customer found your business (Google, referral, repeat). Feeds marketing analytics.</td></tr>
+            <tr><td>Stripe Connect</td><td>The link between your Stripe account and Nyva so payments flow to your bank.</td></tr>
+            <tr><td>Stripe Terminal</td><td>A physical card reader for tap-to-pay in the field. Lower fees than online.</td></tr>
+            <tr><td>Tag</td><td>A short label you attach to a customer (VIP, Cash Only, etc.).</td></tr>
+            <tr><td>Tier</td><td>Your subscription plan: Free, Starter, Pro, or Enterprise. Controls which features you can use.</td></tr>
+            <tr><td>Time &amp; Materials (T&amp;M)</td><td>Invoicing method where you charge for labor hours plus parts used. The standard for home services.</td></tr>
+            <tr><td>Unassigned</td><td>A job with no technician picked yet. Shows a red badge on the card.</td></tr>
+            <tr><td>Utilization %</td><td>Portion of a tech's scheduled day they spent actually on billable jobs (vs. driving or idle).</td></tr>
+            <tr><td>Warranty Expiration</td><td>Date after which a job's warranty no longer applies. Nyva alerts you 30 days before.</td></tr>
+            <tr><td>YTD</td><td>Year-to-date. From January 1 of the current year through today.</td></tr>
+        </tbody>
+    </table>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="help">
+    <div class="feedback">
+        <h3>Need Help?</h3>
+        <p>Ask Sam. Seriously, just ask. "How do I..." works too.</p>
+        <p style="margin-top:1rem">Or email <a href="mailto:hello@chitharina.com">hello@chitharina.com</a></p>
+    </div>
+</section>
+
+<p style="text-align:center;font-size:.82rem;color:var(--g400);margin-top:3rem;font-style:italic">Nyva — Built for businesses that run on trust, show up on time, and get the job done right.</p>
+<p style="text-align:center;font-size:.78rem;color:var(--g400);margin-top:1rem"><a href="/terms" style="color:var(--b600);text-decoration:none">Terms &amp; Conditions</a> &middot; <a href="/privacy" style="color:var(--b600);text-decoration:none">Privacy Policy</a> &middot; <a href="/sms-consent" style="color:var(--b600);text-decoration:none">SMS Terms</a></p>
+
+</main>
+</div>
+
+<script>
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nb.classList.toggle('scrolled',window.scrollY>10)});
+const pf=document.getElementById('pf');
+window.addEventListener('scroll',()=>{const h=document.documentElement;pf.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%'});
+const secs=document.querySelectorAll('.guide-section');
+const links=document.querySelectorAll('.toc-list a');
+const tObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.toc-list a[href="#${en.target.id}"]`);if(a)a.classList.add('active')}})},{rootMargin:'-80px 0px -60% 0px',threshold:0});
+secs.forEach(s=>tObs.observe(s));
+const tt=document.getElementById('tocToggle');
+const tb=document.getElementById('tocBackdrop');
+const closeToc=()=>{document.body.classList.remove('toc-open');tt.setAttribute('aria-expanded','false')};
+tt.addEventListener('click',()=>{const o=document.body.classList.toggle('toc-open');tt.setAttribute('aria-expanded',o?'true':'false')});
+tb.addEventListener('click',closeToc);
+links.forEach(l=>l.addEventListener('click',closeToc));
+</script>
+
+</body></html>
