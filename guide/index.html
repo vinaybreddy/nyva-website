@@ -113,7 +113,7 @@
         <button class="toc-toggle" id="tocToggle" aria-label="Toggle table of contents" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
-        <span class="nav-title"><a href="/" style="color:var(--g400);text-decoration:none;font-weight:500;font-size:.85rem">Nyva</a> <span style="color:var(--g200);margin:0 .5rem">/</span> Product Guide</span>
+        <span class="nav-title"><a href="/" style="color:var(--g400);text-decoration:none;font-weight:500;font-size:.85rem">Chitharina</a> <span style="color:var(--g200);margin:0 .5rem">/</span> Product Guide</span>
     </span>
     <a href="https://apps.apple.com/us/app/nyva-for-small-business/id6761277841" target="_blank" class="nav-cta">Download App</a>
 </nav>
@@ -139,9 +139,11 @@
     <ul class="toc-list">
         <li><a href="#jobs">Jobs</a></li>
         <li><a href="#new-job">Create a Job</a></li>
+        <li><a href="#heads-up">Heads Up (On My Way)</a></li>
         <li><a href="#complete-job">Complete a Job</a></li>
         <li><a href="#customers">Customers</a></li>
         <li><a href="#invoicing">Invoicing & Payment</a></li>
+        <li><a href="#service-menu">Service Menu</a></li>
     </ul>
     <div class="toc-label">Your Business</div>
     <ul class="toc-list">
@@ -532,6 +534,30 @@
 </section>
 <hr class="section-divider">
 
+<section class="guide-section" id="heads-up">
+    <h2>Heads Up (On My Way)</h2>
+    <p>One tap to let the customer know you are heading their way. They get a text with your name, your ETA, and a live tracking link.</p>
+
+    <h3>How It Works</h3>
+    <ol class="sl">
+        <li><strong>Open the job</strong> from your tech job list. You will see two buttons at the bottom: "Heads Up" and "Start Job".</li>
+        <li><strong>Tap "Heads Up"</strong>. A picker appears with ETA options: 10, 15, 20, 30, 45, or 60 minutes.</li>
+        <li><strong>Pick your ETA</strong>. The customer instantly gets an SMS: "<em>ABC Plumbing: Mike is on the way! Expected arrival in about 20 minutes.</em>" with a link to a live tracking page.</li>
+        <li>The job status changes to <strong>En Route</strong>. You will see it in the stepper: Scheduled &rarr; En Route &rarr; In Progress &rarr; Completed.</li>
+        <li>When you arrive, tap <strong>"Start Job"</strong> as usual. The clock starts.</li>
+    </ol>
+
+    <h3>What the Customer Sees</h3>
+    <p>The tracking link opens a branded page showing your company name, the technician's name, a live ETA countdown, and a call button. No app download needed. The page updates every 15 seconds.</p>
+
+    <h3>Good to Know</h3>
+    <ul class="sl">
+        <li>Heads Up respects SMS consent and opt-out. If the customer has opted out, no text is sent.</li>
+        <li>You can only send one Heads Up per job. The button grays out after sending.</li>
+        <li>The owner sees En Route jobs under the "In Progress" tab on the Jobs page.</li>
+    </ul>
+</section>
+
 <section class="guide-section" id="complete-job">
     <h2>Complete a Job</h2>
     <p>Three steps, under 60 seconds. Photos, review the invoice, collect payment.</p>
@@ -724,6 +750,40 @@
     </div>
 </section>
 
+<section class="guide-section" id="service-menu">
+    <h2>Service Menu</h2>
+    <p>Your price book. Instead of typing "Drain Cleaning - $175" every time, your techs tap it from a menu. Faster invoices, consistent pricing, fewer mistakes.</p>
+
+    <h3>Setting Up Your Menu</h3>
+    <ol class="sl">
+        <li>Go to <strong>Settings &rarr; Service Menu</strong>.</li>
+        <li>Choose <strong>Load Starter Pack</strong> to get 20-25 pre-built services for your trade (Plumbing, HVAC, Electrical), or add services one at a time.</li>
+        <li>Each service has a <strong>name</strong>, <strong>price</strong>, <strong>type</strong> (Flat Rate, Labor per hour, or Parts), and an optional <strong>category</strong> (e.g., Drains, Water Heaters).</li>
+        <li>Edit prices anytime. Your menu, your rates.</li>
+    </ol>
+
+    <h3>Using the Menu on Jobs</h3>
+    <p>When building an invoice (during job completion) or creating an estimate, you will see two buttons:</p>
+    <ul class="sl">
+        <li><strong>From Menu</strong>: opens a searchable picker with all your services grouped by category. Tap a service to add it instantly with the right price.</li>
+        <li><strong>Custom Item</strong>: the original free-text entry for one-off items not in your menu.</li>
+    </ul>
+    <p>Techs can mix menu items and custom items on the same invoice.</p>
+
+    <h3>Categories</h3>
+    <p>Services are grouped by category (Drains, Fixtures, Water Heaters, etc.) both in Settings and in the picker. Categories are free-text and auto-suggested from your existing categories when adding new services.</p>
+
+    <h3>Service Types</h3>
+    <table class="ft">
+        <thead><tr><th>Type</th><th>When to Use</th></tr></thead>
+        <tbody>
+            <tr><td>Flat Rate</td><td>Fixed-price services (e.g., Drain Cleaning $175). Most common.</td></tr>
+            <tr><td>Labor</td><td>Hourly labor (e.g., $125/hr). Quantity = hours.</td></tr>
+            <tr><td>Parts</td><td>Materials and supplies. Track your cost vs. sell price for margin visibility.</td></tr>
+        </tbody>
+    </table>
+</section>
+
 <!-- ═══════ YOUR BUSINESS ═══════ -->
 <div class="part-header"><h2>Your Business</h2><p>Reviews, team, reports, and settings</p></div>
 
@@ -853,6 +913,7 @@
             <tr><td>Billing Defaults</td><td>Hourly rate, default payment terms, max discount a tech can give, tax rate, buffer time between jobs, per-job-type duration defaults.</td></tr>
             <tr><td>Integrations</td><td>Stripe keys (for payments), Stripe Connect (for payouts), Email sender, QuickBooks sync, Google Places (address autocomplete).</td></tr>
             <tr><td>Notifications</td><td>SMS and email preferences per notification type. Push notification re-register button.</td></tr>
+            <tr><td>Service Menu</td><td>Your price book. Add services, set prices, organize by category. Load a starter pack for your trade. Techs use it during invoicing.</td></tr>
             <tr><td>AI &amp; Automations</td><td>Dispatch instructions (plain-English rules for the AI), dispatch mode toggles, Sam's briefing schedule, automation toggles.</td></tr>
             <tr><td>Team &amp; Access</td><td>"I also work in the field" toggle (owner-as-tech), team member management shortcut.</td></tr>
             <tr><td>Account</td><td>Your user profile, name, email, log out, delete account.</td></tr>
