@@ -140,6 +140,7 @@
         <li><a href="#jobs">Jobs</a></li>
         <li><a href="#new-job">Create a Job</a></li>
         <li><a href="#heads-up">Heads Up (On My Way)</a></li>
+        <li><a href="#proposals">Proposals</a></li>
         <li><a href="#complete-job">Complete a Job</a></li>
         <li><a href="#customers">Customers</a></li>
         <li><a href="#invoicing">Invoicing & Payment</a></li>
@@ -555,6 +556,44 @@
         <li>Heads Up respects SMS consent and opt-out. If the customer has opted out, no text is sent.</li>
         <li>You can only send one Heads Up per job. The button grays out after sending.</li>
         <li>The owner sees En Route jobs under the "In Progress" tab on the Jobs page.</li>
+    </ul>
+</section>
+
+<section class="guide-section" id="proposals">
+    <h2>Proposals (Good / Better / Best)</h2>
+    <p>Present the customer with three options instead of one price. Most customers pick the middle option, which increases your average ticket size by 20-40%. Sam AI builds the tiers for you.</p>
+
+    <h3>Creating a Proposal</h3>
+    <ol class="sl">
+        <li>Go to <strong>Estimates</strong> and tap <strong>New Proposal</strong>.</li>
+        <li><strong>Step 1 - Details:</strong> Select the customer, job type, describe the work, and optionally require a deposit (fixed $ or % of the selected tier).</li>
+        <li><strong>Step 2 - Build Options:</strong> You see three tabs: Good, Better, Best. Each tab is an option you present to the customer.</li>
+        <li>Tap <strong>"Sam: Generate Options"</strong> and Sam AI drafts all three tiers based on your job description and your Service Menu prices. Sam understands your trade, your pricing, and builds realistic options.</li>
+        <li>Review and adjust. Add or remove items from each tier. Use "From Menu" to pull from your Service Menu, or add custom items.</li>
+        <li>Tap <strong>Create Proposal</strong>. It saves as a draft estimate you can send to the customer.</li>
+    </ol>
+
+    <h3>How the Tiers Work</h3>
+    <table class="ft">
+        <thead><tr><th>Tier</th><th>Purpose</th><th>Example (Water Heater)</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Good</strong></td><td>Minimum fix. Solves the immediate problem.</td><td>Repair leaking valve - $250</td></tr>
+            <tr><td><strong>Better</strong></td><td>Fix + prevention. The recommended sweet spot.</td><td>Repair + flush + anode rod - $475</td></tr>
+            <tr><td><strong>Best</strong></td><td>Premium solution. Full replacement or upgrade.</td><td>New 50-gal water heater installed - $2,200</td></tr>
+        </tbody>
+    </table>
+
+    <h3>What the Customer Sees</h3>
+    <p>When you send the proposal, the customer opens a link and sees three cards side by side. The recommended option is highlighted with a blue badge. They tap to select one, then tap Approve. If you configured a deposit, they pay it right there via Stripe. No app download needed.</p>
+
+    <h3>After Approval</h3>
+    <p>When the customer approves a tier, you get a push notification. The estimate shows "Approved" with which tier they picked. Schedule it as a job from the Estimates page, and only the line items from their chosen tier carry over.</p>
+
+    <h3>Sam AI Tips</h3>
+    <ul class="sl">
+        <li>The more detail you put in the job description, the better Sam's suggestions. "Water heater leaking from bottom, 10 years old, gas unit" gives Sam much more to work with than "water heater issue".</li>
+        <li>Sam uses your Service Menu prices. If your menu is set up, Sam pulls real prices. If not, Sam uses typical industry pricing for your trade.</li>
+        <li>You can always edit Sam's suggestions. Sam drafts, you finalize.</li>
     </ul>
 </section>
 
