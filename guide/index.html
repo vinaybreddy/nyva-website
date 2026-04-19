@@ -139,7 +139,7 @@
     <ul class="toc-list">
         <li><a href="#jobs">Jobs</a></li>
         <li><a href="#new-job">Create a Job</a></li>
-        <li><a href="#pipeline">Pipeline Board</a></li>
+        <li><a href="#pipeline">Pipeline</a></li>
         <li><a href="#heads-up">Heads Up (On My Way)</a></li>
         <li><a href="#proposals">Proposals</a></li>
         <li><a href="#complete-job">Complete a Job</a></li>
@@ -537,17 +537,29 @@
 <hr class="section-divider">
 
 <section class="guide-section" id="pipeline">
-    <h2>Pipeline Board</h2>
-    <p>See every deal at a glance. The Pipeline page shows your estimates as a visual board with five columns, so you always know where your money is sitting.</p>
+    <h2>Pipeline</h2>
+    <p><strong>Pipeline</strong> is your sales command center. It is a single page in the sidebar where you manage all your quotes, from first lead to closed deal. Everything you create here -- estimates and proposals -- lives on this board.</p>
 
-    <h3>The Five Columns</h3>
+    <h3>Estimates vs Proposals</h3>
+    <p>You can create two types of quotes from the Pipeline page:</p>
+    <table class="ft">
+        <thead><tr><th>Type</th><th>What It Is</th><th>When to Use</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Estimate</strong></td><td>A single-price quote with line items (labor, parts, fees). One total.</td><td>Straightforward jobs where the scope is clear. "Here's what it costs."</td></tr>
+            <tr><td><strong>Proposal</strong></td><td>A Good / Better / Best quote with three tiers. Sam AI can draft the tiers for you.</td><td>Bigger jobs where you want to give the customer options. Most pick the middle tier, which increases your average ticket 20-40%.</td></tr>
+        </tbody>
+    </table>
+    <p>Both types follow the same lifecycle: Draft &rarr; Sent &rarr; Approved/Declined &rarr; Scheduled Job. Both show up on the same pipeline board. A "Proposal" badge marks multi-tier deals so you can tell them apart at a glance.</p>
+
+    <h3>The Board</h3>
+    <p>The default view is a visual board with five columns. Each deal is a card that moves through the columns as it progresses.</p>
     <table class="ft">
         <thead><tr><th>Column</th><th>What It Means</th></tr></thead>
         <tbody>
-            <tr><td>New Lead</td><td>Draft estimates you have not sent yet. Price them and send.</td></tr>
+            <tr><td>New Lead</td><td>Draft estimates and proposals you have not sent yet. Price them and send.</td></tr>
             <tr><td>Estimate Sent</td><td>Waiting on the customer. Oldest deals show first so nothing slips through the cracks.</td></tr>
             <tr><td>Approved</td><td>Customer said yes. Schedule the job to move it to Won.</td></tr>
-            <tr><td>Won</td><td>Approved estimates that have been converted to scheduled jobs. Money in the pipeline.</td></tr>
+            <tr><td>Won</td><td>Approved deals that have been converted to scheduled jobs.</td></tr>
             <tr><td>Lost</td><td>Declined, expired, or cancelled. Each card shows the reason so you can learn from it.</td></tr>
         </tbody>
     </table>
@@ -561,17 +573,17 @@
         <li><strong>Quick actions</strong>: Send, Follow Up, Mark as Lost, or Schedule, depending on the column.</li>
     </ul>
 
-    <h3>Sam Stale-Deal Alerts</h3>
-    <p>When estimates have been sitting in the Sent column for 5 or more days with no response, Sam shows an amber alert at the top of the board. Following up within 48 hours doubles your close rate. Tap the deal to resend or call the customer.</p>
-
-    <h3>Marking a Deal as Lost</h3>
-    <p>Tap "Lost" on any sent estimate. Nyva asks why: too expensive, went with a competitor, doing it themselves, stopped responding, project cancelled, bad timing, or a custom reason. This data helps Sam spot trends in your close rate over time.</p>
-
-    <h3>Switching Views</h3>
-    <p>Use the Board/List toggle in the top right to switch between the visual pipeline and the classic list view with tabs and search. The board is the default.</p>
-
     <h3>Pipeline Totals</h3>
     <p>Above the board, colored summary cards show the dollar total in each active column (New Lead, Sent, Approved, Won). You can see your total pipeline value at a glance without adding anything up.</p>
+
+    <h3>Sam Stale-Deal Alerts</h3>
+    <p>When deals have been sitting in the Sent column for 5 or more days with no response, Sam shows an amber alert at the top of the board. Following up within 48 hours doubles your close rate. Tap the deal to resend or call the customer.</p>
+
+    <h3>Marking a Deal as Lost</h3>
+    <p>Tap "Lost" on any sent deal. Nyva asks why: too expensive, went with a competitor, doing it themselves, stopped responding, project cancelled, bad timing, or a custom reason. This data helps Sam spot trends in your close rate over time.</p>
+
+    <h3>Switching Views</h3>
+    <p>Use the Board/List toggle in the top right to switch between the visual board and the classic list view with tabs and search. The board is the default.</p>
 </section>
 <hr class="section-divider">
 
