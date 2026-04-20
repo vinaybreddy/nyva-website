@@ -145,6 +145,7 @@
         <li><a href="#complete-job">Complete a Job</a></li>
         <li><a href="#customers">Customers</a></li>
         <li><a href="#invoicing">Invoicing & Payment</a></li>
+        <li><a href="#recurring">Recurring Jobs</a></li>
         <li><a href="#service-menu">Service Menu</a></li>
     </ul>
     <div class="toc-label">Your Business</div>
@@ -838,6 +839,43 @@
     <div class="co co-green">
         <strong>Paid Jobs Are Locked</strong>
         Once an invoice is paid, the job is locked. No one can add or remove line items, photos, or parts. This protects your accounting records.
+    </div>
+</section>
+
+<section class="guide-section" id="recurring">
+    <h2>Recurring Jobs &amp; Service Plans</h2>
+    <p>Set up maintenance contracts that run on autopilot. Nyva automatically creates jobs on a schedule you define -- weekly, bi-weekly, monthly, quarterly, or custom intervals.</p>
+
+    <h3>Creating a Recurring Series</h3>
+    <ol class="sl">
+        <li>Go to <strong>More &rarr; Recurring</strong> and tap <strong>New Series</strong>.</li>
+        <li>Pick a <strong>customer</strong>, <strong>job type</strong>, and <strong>frequency</strong> (weekly, monthly, etc.).</li>
+        <li>Choose a <strong>billing mode</strong>:
+            <ul>
+                <li><strong>Time &amp; Materials</strong> -- standard per-job billing. Optionally set a custom hourly rate.</li>
+                <li><strong>Flat Monthly</strong> -- fixed monthly fee regardless of visits. Great for maintenance contracts.</li>
+                <li><strong>Prepaid Visits</strong> -- customer pays for a block of visits upfront (e.g., 12 visits). Nyva tracks usage and auto-pauses when the block runs out.</li>
+            </ul>
+        </li>
+        <li>Set a <strong>start date</strong>, preferred day/time, and optional end condition (never, after N visits, or on a date).</li>
+        <li>Tap <strong>Create Series</strong>. Nyva handles the rest.</li>
+    </ol>
+
+    <h3>How It Works</h3>
+    <p>Every morning, Nyva's cron job looks 3 days ahead and creates jobs for any active series. Each generated job copies the template (job type, description, address, technician) and line items from the previous job in the series. You can edit individual jobs without affecting the series.</p>
+
+    <h3>Managing Series</h3>
+    <ul>
+        <li><strong>Edit</strong> -- change frequency, billing, technician, or any detail. Tap the pencil icon on the detail panel.</li>
+        <li><strong>Pause</strong> -- temporarily stop generating jobs. Resume anytime.</li>
+        <li><strong>Cancel</strong> -- permanently stop the series. Already-scheduled jobs stay on the calendar.</li>
+    </ul>
+
+    <h3>Prepaid Block Tracking</h3>
+    <p>For prepaid series, the detail panel shows a progress bar: "8 of 12 visits remaining." When all visits are used, the series auto-pauses and you can sell another block.</p>
+
+    <div class="callout">
+        <strong>Tip:</strong> You can also create a recurring series from any job. Open the job, scroll to the Repeat section, and toggle it on.
     </div>
 </section>
 
