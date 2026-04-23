@@ -113,7 +113,7 @@
         <button class="toc-toggle" id="tocToggle" aria-label="Toggle table of contents" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
-        <span class="nav-title"><a href="/" style="color:var(--g400);text-decoration:none;font-weight:500;font-size:.85rem">Chitharina</a> <span style="color:var(--g200);margin:0 .5rem">/</span> Product Guide</span>
+        <span class="nav-title"><a href="/" style="color:var(--g400);text-decoration:none;font-weight:500;font-size:.85rem">Nyva</a> <span style="color:var(--g200);margin:0 .5rem">/</span> Product Guide</span>
     </span>
     <a href="https://apps.apple.com/us/app/nyva-for-small-business/id6761277841" target="_blank" class="nav-cta">Download App</a>
 </nav>
@@ -134,6 +134,7 @@
         <li><a href="#schedule">Schedule & Dispatch</a></li>
         <li><a href="#plan-day">Plan My Day</a></li>
         <li><a href="#phone-agent">AI Phone Agent</a></li>
+        <li><a href="#voice">Voice Commands</a></li>
     </ul>
     <div class="toc-label">Managing Work</div>
     <ul class="toc-list">
@@ -179,7 +180,7 @@
     <div class="guide-meta">
         <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 min read</span>
         <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>10 min setup</span>
-        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Updated Apr 10, 2026</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Updated Apr 23, 2026</span>
     </div>
 </div>
 
@@ -383,6 +384,23 @@
         <li><strong>"Should I hire another tech?"</strong></li>
         <li><strong>"Who's my best tech?"</strong></li>
     </ul>
+
+    <h3>Voice-to-Action</h3>
+    <p>Speak commands to Sam instead of typing. Tap the microphone, say what you need in plain English, and Sam does the rest.</p>
+
+    <ul class="fl">
+        <li><strong>"Create invoice for $450 water heater for Sarah Kim"</strong></li>
+        <li><strong>"Schedule a drain cleaning for John Smith tomorrow at 2pm"</strong></li>
+        <li><strong>"Create an estimate for AC repair at 123 Main St"</strong></li>
+        <li><strong>"Find customer Rodriguez"</strong></li>
+    </ul>
+
+    <p>Sam parses what you said, resolves the customer from your database, shows you a confirmation card with the details, and executes on your approval. Supports creating jobs, invoices, estimates, and searching customers.</p>
+
+    <div class="co co-purple">
+        <strong>Hands-free dispatching</strong>
+        Voice commands work from the Ask Sam screen. Useful when you're on the road and need to schedule a callback without pulling over to type.
+    </div>
 </section>
 <hr class="section-divider">
 
@@ -433,6 +451,32 @@
     <div class="co co-green">
         <strong>SMS consent handled automatically</strong>
         The AI collects verbal consent during the call. No manual checkbox needed for phone-booked customers.
+    </div>
+</section>
+<hr class="section-divider">
+
+<section class="guide-section" id="voice">
+    <h2>Voice Commands</h2>
+    <p>Tap the microphone icon on the Ask Sam screen and speak a command in plain English. Sam transcribes your speech, extracts the intent, resolves customers and jobs from your database, and shows a confirmation card before executing.</p>
+
+    <h3>What You Can Say</h3>
+    <ul class="fl">
+        <li><strong>"Schedule a water heater install for Sarah Kim tomorrow at 2pm"</strong> -- creates a job</li>
+        <li><strong>"Create invoice for $450 water heater for John Smith"</strong> -- builds an invoice</li>
+        <li><strong>"Create an estimate for AC repair at 123 Main St"</strong> -- drafts an estimate</li>
+        <li><strong>"Find customer Rodriguez"</strong> -- searches your customer list</li>
+    </ul>
+
+    <h3>How It Works</h3>
+    <ol class="sl">
+        <li><strong>Speak</strong> -- tap the mic and say what you need. Sam transcribes instantly.</li>
+        <li><strong>Confirm</strong> -- Sam shows a card with the parsed details (customer, amount, date). Review it.</li>
+        <li><strong>Execute</strong> -- tap Confirm and the action runs. The job, invoice, or estimate is created.</li>
+    </ol>
+
+    <div class="co co-purple">
+        <strong>Pro plan feature</strong>
+        Voice-to-Action is available on the Pro plan and above. Requires microphone permission on your device.
     </div>
 </section>
 <hr class="section-divider">
@@ -926,6 +970,10 @@
     </div>
     <p class="sc-cap">Average rating, star breakdown, and individual reviews sorted newest-first</p>
     <p>Low ratings (1-2 stars) stand out so you can follow up. Filter by tech to see who's getting the best reviews.</p>
+
+    <h3>Google Reviews Integration</h3>
+    <p>Connect your Google Business Profile and see your live Google rating, review count, and the three most recent Google reviews right alongside your internal Nyva reviews. One page, both sources. No switching between apps to know your public reputation.</p>
+    <p>Set it up in <strong>Settings</strong> by searching for your business on Google Places. Nyva pulls your reviews automatically.</p>
 </section>
 <hr class="section-divider">
 
@@ -1077,6 +1125,9 @@
     </table>
 
     <p>QuickBooks integration syncs customers, invoices, and payments automatically. Your bookkeeper sees everything without you doing anything.</p>
+
+    <h3>Dark Mode</h3>
+    <p>Prefer a darker screen? Go to <strong>Settings &gt; Account</strong> and switch between Light, Dark, or System (follows your phone's setting). Every screen in the app supports dark mode.</p>
 </section>
 <hr class="section-divider">
 
@@ -1321,7 +1372,7 @@
 
 <section class="guide-section" id="ref-sam">
     <h2>Sam AI Reference</h2>
-    <p>Sam is Nyva's AI layer. It's four things in one: the weekly briefing, an advisor you can ask questions, the dispatch brain, and the phone agent.</p>
+    <p>Sam is Nyva's AI layer. Five capabilities in one: the weekly briefing, an advisor you can ask questions, voice commands, the dispatch brain, and the phone agent.</p>
 
     <h3>Weekly Briefing. What's In It</h3>
     <p>Sam writes a briefing every week on the day and time you pick. Each section follows the same four-part structure:</p>
@@ -1368,6 +1419,18 @@
         <li><strong>Per-tech breakdown</strong>: jobs count, service areas covered.</li>
     </ul>
     <p>You can confirm all proposals at once, or confirm/reject each one individually. If you do nothing, Plan My Day auto-applies after 30 minutes (if you've enabled auto-approve in Settings).</p>
+
+    <h3>Voice-to-Action. Supported Commands</h3>
+    <table class="ft">
+        <thead><tr><th>Intent</th><th>Example</th><th>What Happens</th></tr></thead>
+        <tbody>
+            <tr><td>Create Job</td><td>"Schedule a drain cleaning for Sarah Kim tomorrow at 2pm"</td><td>Resolves customer, creates job with date/time, shows confirmation card</td></tr>
+            <tr><td>Create Invoice</td><td>"Create invoice for $450 water heater for John Smith"</td><td>Finds customer, builds invoice with line items, shows for approval</td></tr>
+            <tr><td>Create Estimate</td><td>"Create an estimate for AC repair at 123 Main St"</td><td>Matches customer by address, creates draft estimate</td></tr>
+            <tr><td>Search Customer</td><td>"Find customer Rodriguez"</td><td>Searches by name, shows matching customer profile</td></tr>
+        </tbody>
+    </table>
+    <p>Sam resolves customers by name, phone, or address from your database. If multiple matches are found, Sam asks you to pick. All actions require your confirmation before executing.</p>
 
     <h3>AI Phone Agent. What You See After a Call</h3>
     <ul class="fl">
