@@ -155,22 +155,39 @@
         .how-step p{font-size:.88rem;color:var(--g600);line-height:1.55}
 
         /* PRICING */
-        .pricing-strip{padding:4rem 2rem;text-align:center;border-top:1px solid var(--g100)}
-        .pricing-card{display:inline-block;background:var(--white);border:2px solid var(--g100);border-radius:20px;padding:2.5rem 3.5rem}
-        .pricing-amount{font-family:'Newsreader',Georgia,serif;font-size:3.2rem;font-weight:400;color:var(--g900);line-height:1}
-        .pricing-amount span{font-size:1.1rem;color:var(--g400);font-family:'DM Sans',sans-serif;font-weight:500}
-        .pricing-detail{font-size:.92rem;color:var(--g600);margin-top:.5rem;margin-bottom:1.25rem}
-        .pricing-features{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-        .pf{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--g600);font-weight:500}
-        .pf svg{width:16px;height:16px;color:var(--gn500)}
-        .pricing-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 2rem;background:var(--b600);color:var(--white);border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 2px 12px rgba(37,99,235,.2)}
+        .pricing-strip{padding:5rem 2rem;text-align:center;border-top:1px solid var(--g100)}
+        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:2.5rem auto 0;align-items:start}
+        .pricing-card{background:var(--white);border:2px solid var(--g100);border-radius:20px;padding:2.25rem 2rem;text-align:left;position:relative;transition:transform .2s,box-shadow .2s}
+        .pricing-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+        .pricing-card.featured{border-color:var(--b500);box-shadow:0 4px 20px rgba(37,99,235,.12)}
+        .pricing-card.featured::before{content:'Most Popular';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--b600);color:var(--white);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.35rem 1rem;border-radius:20px;white-space:nowrap}
+        .pricing-tier{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--g400);margin-bottom:.5rem}
+        .pricing-amount{font-family:'Newsreader',Georgia,serif;font-size:2.8rem;font-weight:400;color:var(--g900);line-height:1}
+        .pricing-amount span{font-size:1rem;color:var(--g400);font-family:'DM Sans',sans-serif;font-weight:500}
+        .pricing-desc{font-size:.88rem;color:var(--g600);margin-top:.5rem;margin-bottom:1.25rem;line-height:1.5}
+        .pricing-features{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
+        .pf{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--g700);font-weight:500}
+        .pf svg{width:15px;height:15px;flex-shrink:0;color:var(--gn500)}
+        .pf.disabled{color:var(--g400)}
+        .pf.disabled svg{color:var(--g200)}
+        .pricing-cta{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 2rem;background:var(--b600);color:var(--white);border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 2px 12px rgba(37,99,235,.2);width:100%}
         .pricing-cta:hover{background:var(--b700);transform:translateY(-2px)}
+        .pricing-cta.outline{background:var(--white);color:var(--g800);border:1.5px solid var(--g200);box-shadow:none}
+        .pricing-cta.outline:hover{border-color:var(--g400);background:var(--g50)}
+        .pricing-trial{font-size:.78rem;color:var(--g400);text-align:center;margin-top:.75rem}
 
         /* TRUST SIGNALS */
         .trust-section{padding:2.5rem 2rem 3rem;text-align:center}
         .trust-inner{max-width:600px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
         .trust-badge{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--g400);font-weight:500}
         .trust-badge svg{width:20px;height:20px;color:var(--g400)}
+
+        /* INTEGRATIONS STRIP */
+        .integrations-strip{padding:3rem 2rem;text-align:center;background:var(--g50);border-top:1px solid var(--g100);border-bottom:1px solid var(--g100)}
+        .integrations-strip p{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--g400);margin-bottom:1.25rem}
+        .integrations-logos{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+        .int-logo{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--g600)}
+        .int-logo svg{width:24px;height:24px}
 
         /* FOOTER */
         footer{padding:3rem 2rem;text-align:center;border-top:1px solid var(--g100)}
@@ -267,8 +284,9 @@
             .features-grid{grid-template-columns:1fr}
             .how-steps{grid-template-columns:1fr;gap:1.5rem}
             .section{padding:4rem 1.5rem}
-            .pricing-card{padding:2rem 1.5rem;width:100%}
-            .pricing-features{flex-direction:column;align-items:center;gap:.75rem}
+            .pricing-grid{grid-template-columns:1fr;max-width:400px}
+            .pricing-card{padding:2rem 1.5rem}
+            .pricing-card.featured{order:-1}
             .compare-table th,.compare-table td{padding:.75rem 1rem;font-size:.82rem}
             .compare-table th:first-child{width:40%}
             .roadmap-items{flex-direction:column}
@@ -378,7 +396,7 @@
                         <img src="guide/screenshots/17-briefing-mobile.png" alt="Weekly Business Briefing" loading="lazy">
                         <img src="guide/screenshots/completion-done.png" alt="Job Completion" loading="lazy">
                         <div class="explainer-overlay cta-bg" id="ctaOverlay">
-                            <div class="cta-price">$39<span>/mo</span></div>
+                            <div class="cta-price">From $39<span>/mo</span></div>
                             <div class="cta-sub">Flat rate. Unlimited users.<br>Everything included.</div>
                             <a href="https://my.nyva.app" target="_blank" class="cta-btn">Start Free Trial</a>
                         </div>
@@ -427,7 +445,7 @@
                     <div class="sp-stat-label">Setup time</div>
                 </div>
                 <div class="sp-stat">
-                    <div class="sp-stat-num">From $39</div>
+                    <div class="sp-stat-num">From $39/mo</div>
                     <div class="sp-stat-label">Flat rate, no per-user fees</div>
                 </div>
             </div>
@@ -566,6 +584,33 @@
         </div>
     </section>
 
+    <!-- INTEGRATIONS -->
+    <section class="integrations-strip">
+        <p>Integrates with tools you already use</p>
+        <div class="integrations-logos">
+            <div class="int-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.664 2.029-1.664 1.455 0 2.51.621 2.51.621l.912-2.182S14.925 2.86 12.67 2.86c-2.765 0-4.678 1.588-4.678 3.818 0 2.01 1.42 3.04 3.716 3.87 1.478.536 2.343 1.057 2.343 2.003 0 .946-.769 1.664-2.21 1.664-1.706 0-3.088-.883-3.088-.883l-1.01 2.182s1.525 1.06 3.946 1.06c2.889 0 5.01-1.455 5.01-3.94.001-2.172-1.427-3.109-3.723-4.084z" fill="#635BFF"/></svg>
+                Stripe
+            </div>
+            <div class="int-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 15.06c-.98.2-1.96-.43-2.16-1.41-.2-.98.43-1.96 1.41-2.16.98-.2 1.96.43 2.16 1.41.2.98-.43 1.96-1.41 2.16zm4.82-4.82c-.98.2-1.96-.43-2.16-1.41-.2-.98.43-1.96 1.41-2.16.98-.2 1.96.43 2.16 1.41.2.98-.43 1.96-1.41 2.16z" fill="#2CA01C"/></svg>
+                QuickBooks
+            </div>
+            <div class="int-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                Google
+            </div>
+            <div class="int-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#F22F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Twilio
+            </div>
+            <div class="int-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="var(--g600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Resend
+            </div>
+        </div>
+    </section>
+
     <!-- COMPARISON -->
     <section class="compare-section" id="compare">
         <div class="compare-inner">
@@ -575,32 +620,21 @@
 
             <table class="compare-table">
                 <tr><th>Feature</th><th>Nyva</th><th>Enterprise tools</th></tr>
-                <tr><td>Monthly cost (5-person crew)</td><td class="included">From $39/mo</td><td class="extra">$245-$500 per tech/mo</td></tr>
-                <tr><td>Annual cost (5 techs)</td><td class="included">From $468/yr</td><td class="extra">$15,000-$30,000/yr</td></tr>
-                <tr><td>Per-user fees</td><td class="included">None. Unlimited users</td><td class="extra">$29-$500 per user</td></tr>
+                <tr><td>Monthly cost (5-person crew)</td><td class="included">$39-$129/mo flat</td><td class="extra">$245-$500 per tech/mo</td></tr>
+                <tr><td>Per-user fees</td><td class="included">None</td><td class="extra">$29-$500 per user</td></tr>
                 <tr><td>Contract required</td><td class="included">No contract, cancel anytime</td><td class="extra">12-36 month minimum</td></tr>
-                <tr><td>Implementation/setup</td><td class="included">Free. We set you up personally</td><td class="extra">$5,000-$50,000</td></tr>
+                <tr><td>Setup</td><td class="included">Free. We set you up personally</td><td class="extra">$5,000-$50,000</td></tr>
                 <tr><td>AI business advisor</td><td class="included">Included (Sam)</td><td class="missing">Not available</td></tr>
                 <tr><td>AI phone receptionist</td><td class="included">Included</td><td class="extra">$99-$800/mo add-on</td></tr>
-                <tr><td>AI route optimization</td><td class="included">Included (3 tiers)</td><td class="missing">Most don't offer</td></tr>
-                <tr><td>AI dispatch w/ plain-English rules</td><td class="included">Included</td><td class="missing">Not available</td></tr>
-                <tr><td>Voice commands ("schedule a job for...")</td><td class="included">Included</td><td class="missing">Not available</td></tr>
-                <tr><td>Live Google Reviews integration</td><td class="included">Included</td><td class="extra">Add-on or not available</td></tr>
-                <tr><td>Mini Re-Optimize on conflicts</td><td class="included">Included</td><td class="missing">Not available</td></tr>
-                <tr><td>Weekly AI briefing</td><td class="included">Included (Sam)</td><td class="missing">Not available</td></tr>
-                <tr><td>Scheduling &amp; dispatch</td><td class="included">Drag-drop + AI</td><td>Drag-drop</td></tr>
-                <tr><td>Invoicing &amp; payments</td><td class="included">Full flow + QR pay</td><td>Full flow</td></tr>
-                <tr><td>Estimates &rarr; deposit &rarr; invoice</td><td class="included">End-to-end, 1 tap</td><td>Usually multi-step</td></tr>
-                <tr><td>Recurring jobs</td><td class="included">Weekly, monthly, quarterly — auto-scheduled</td><td class="extra">Add-on or higher tier</td></tr>
-                <tr><td>Commercial customers</td><td class="included">Per-customer terms &amp; billing contacts</td><td class="extra">Enterprise tier only</td></tr>
-                <tr><td>Multi-day &amp; flat-rate jobs</td><td class="included">Included</td><td>Varies</td></tr>
-                <tr><td>Warranty tracking &amp; alerts</td><td class="included">Included</td><td class="extra">Higher tiers</td></tr>
+                <tr><td>AI dispatch &amp; route optimization</td><td class="included">Included + voice commands</td><td class="missing">Most don't offer</td></tr>
+                <tr><td>Scheduling &amp; dispatch</td><td class="included">Drag-drop + AI</td><td>Drag-drop only</td></tr>
+                <tr><td>Invoicing &amp; payments</td><td class="included">Full flow + QR pay on-site</td><td>Full flow</td></tr>
                 <tr><td>Customer SMS automations</td><td class="included">Reminders, follow-ups, review requests</td><td class="extra">Add-on</td></tr>
-                <tr><td>Real-time push notifications</td><td class="included">iPhone + web, owner &amp; tech</td><td>Varies</td></tr>
+                <tr><td>Google Reviews integration</td><td class="included">Live rating + reviews</td><td class="extra">Add-on or not available</td></tr>
                 <tr><td>QuickBooks sync</td><td class="included">Included</td><td>Included</td></tr>
-                <tr><td>Mobile app</td><td class="included">Native iPhone + web</td><td>iOS + Android</td></tr>
+                <tr><td>Recurring &amp; multi-day jobs</td><td class="included">Auto-scheduled</td><td class="extra">Add-on or higher tier</td></tr>
+                <tr><td>Spanish language support</td><td class="included">Full app in Spanish</td><td class="extra">English only or paid add-on</td></tr>
                 <tr><td>Support</td><td class="included">Direct founder access</td><td class="extra">AI chatbot first, phone on higher tiers</td></tr>
-                <tr><td>Spanish language support</td><td class="included">Full app available in Spanish</td><td class="extra">English only or paid add-on</td></tr>
             </table>
             <p class="compare-footnote">Enterprise pricing based on publicly available rates from leading field service platforms as of April 2026. Nyva is purpose-built for 1-to-5 person crews, not a scaled-down version of software designed for 50-tech operations.</p>
         </div>
@@ -625,16 +659,62 @@
 
     <!-- PRICING -->
     <section class="pricing-strip" id="pricing">
-        <div class="pricing-card">
-            <div class="pricing-amount">$39<span>/mo</span></div>
-            <p class="pricing-detail">3 plans. 3-month free trial. No per-user fees.</p>
-            <div class="pricing-features">
-                <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited techs</div>
-                <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sam AI partner</div>
-                <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI phone receptionist</div>
-                <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Stripe payments included</div>
+        <span class="section-label">Simple Pricing</span>
+        <h2 class="section-title">3 months free. Then pick your plan.</h2>
+        <p class="section-subtitle">No per-user fees. No contracts. Cancel anytime.</p>
+
+        <div class="pricing-grid">
+            <!-- STARTER -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Starter</div>
+                <div class="pricing-amount">$39<span>/mo</span></div>
+                <p class="pricing-desc">Everything a solo operator needs to look professional and get paid fast.</p>
+                <div class="pricing-features">
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Scheduling &amp; dispatch</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Invoicing &amp; Stripe payments</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Customer CRM</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Job photos &amp; notes</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SMS reminders</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>iPhone app</div>
+                </div>
+                <a href="https://my.nyva.app" target="_blank" class="pricing-cta outline">Start Free Trial</a>
+                <p class="pricing-trial">Free for 3 months</p>
             </div>
-            <a href="https://my.nyva.app" target="_blank" class="pricing-cta">Start Free Trial</a>
+
+            <!-- PRO -->
+            <div class="pricing-card featured">
+                <div class="pricing-tier">Pro</div>
+                <div class="pricing-amount">$79<span>/mo</span></div>
+                <p class="pricing-desc">AI-powered operations for growing crews. The sweet spot for 2-5 tech teams.</p>
+                <div class="pricing-features">
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Starter</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sam AI business advisor</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI dispatch &amp; route optimization</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Weekly AI briefings</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Voice commands</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Team management (up to 5 techs)</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Reports &amp; analytics</div>
+                </div>
+                <a href="https://my.nyva.app" target="_blank" class="pricing-cta">Start Free Trial</a>
+                <p class="pricing-trial">Free for 3 months</p>
+            </div>
+
+            <!-- BUSINESS -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Business</div>
+                <div class="pricing-amount">$129<span>/mo</span></div>
+                <p class="pricing-desc">The full platform. AI phone agent, QuickBooks sync, and everything else.</p>
+                <div class="pricing-features">
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI phone receptionist (24/7)</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>QuickBooks sync</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Reviews integration</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited technicians</div>
+                    <div class="pf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support</div>
+                </div>
+                <a href="https://my.nyva.app" target="_blank" class="pricing-cta outline">Start Free Trial</a>
+                <p class="pricing-trial">Free for 3 months</p>
+            </div>
         </div>
     </section>
 
@@ -699,7 +779,7 @@
             {type:'img',index:3,title:'Get paid on the spot',desc:'Job done, invoice sent, customer pays — all in under 60 seconds. QR code, card, or Stripe Terminal. No more chasing checks.'},
             {type:'img',index:4,title:'Weekly business briefing',desc:'Every Monday, Sam tells you what happened, what needs attention, and what to do about it. In plain English, not a spreadsheet.'},
             {type:'img',index:5,title:'Job complete, payment received',desc:'Your tech marks the job done, collects payment, and the receipt is sent automatically. You see it all in real time.'},
-            {type:'overlay',id:'ctaOverlay',title:'Free for 3 months. Plans from $39/mo.',desc:'No per-user fees. No contracts. AI advisor, phone receptionist, scheduling, invoicing, payments - all in one app built for crews of 1 to 5.'}
+            {type:'overlay',id:'ctaOverlay',title:'Free for 3 months. Plans from $39/mo.',desc:'No per-user fees. No contracts. 3 tiers: Starter $39, Pro $79, Business $129. AI advisor, phone receptionist, scheduling, invoicing, payments - all in one app.'}
         ];
 
         // Per-slide cue points (seconds) — aligned to voiceover narration via silence detection
